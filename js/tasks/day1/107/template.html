@@ -1,0 +1,209 @@
+<div ng-controller="Task107Controller as t107C" style="margin-left: 50px;">
+
+    <!--  PAGE 1  -->
+
+    <div ng-if="t107C.showingPanel === 'choice'">
+        <div class="row" style="margin-top: 160px;">
+            <div class="col" ng-click="t107C.clickPresentImage()">
+
+                <!-- 'Focus' layout -->
+                <div class="isp-task107-focus-container" ng-if="t107C.image1_p1_mode === 'focus'">
+
+                    <div isp-imagefocus
+                         isp-image-url="{{t107C.image1_p1}}"
+                         isp-data="t107C.image1_p1_data"></div>
+
+                </div>
+
+                <!-- 'Overlay' layout -->
+                <div class="isp-task107-focus-container" ng-if="t107C.image1_p1_mode === 'overlay'">
+
+                    <div ng-if="t107C.image1_p1_data['code'] === 'zoomable-image'">
+                        <img ng-src="{{::t107C.image1_p1}}" style="width: 300px;">
+                        <div isp-zoomableimage
+                             isp-image-url="{{t107C.image1_p1_data['filepath']}}"
+                             isp-data="t107C.image1_p1_data">
+                        </div>
+
+                    </div>
+
+                    <div ng-if="t107C.image1_p1_data['code'] === 'appearing-image'">
+                        <img ng-src="{{::t107C.image1_p1}}" style="width: 300px;">
+                        <div isp-appearingimage
+                             isp-image-url="{{t107C.image1_p1_data['filepath']}}"
+                             isp-data="t107C.image1_p1_data">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- no special formatting -->
+                <div class="center" ng-if="t107C.image1_p1_mode === 'none'">
+                    <img ng-src="{{::t107C.image1_p1}}" style="width: 350px;">
+                </div>
+
+                <div ng-if="t107C.stage === 1 && t107C.activated" isp-pointer isp-pointer-style="{ 'left': '150px', 'top': '200px'}" isp-hide-after="false" isp-delay="6000"></div>
+
+            </div>
+
+            <div class="col" ng-click="t107C.clickPastImage()">
+
+                <!-- 'Focus' layout -->
+                <div class="isp-task107-focus-container" ng-if="t107C.image2_p1_mode === 'focus'" >
+
+                    <div isp-imagefocus
+                         isp-image-url="{{t107C.image2_p1}}"
+                         isp-data="t107C.image2_p1_data"></div>
+
+                </div>
+
+                <!-- 'Overlay' layout -->
+                <div class="isp-task107-focus-container" ng-if="t107C.image2_p1_mode === 'overlay'" >
+
+                    <div ng-if="t107C.image2_p1_data['code'] === 'zoomable-image'">
+                        <img ng-src="{{::t107C.image2_p1}}" style="width: 300px;">
+                        <div isp-zoomableimage
+                             isp-image-url="{{t107C.image2_p1_data['filepath']}}"
+                             isp-data="t107C.image2_p1_data">
+                        </div>
+
+                    </div>
+
+                    <div ng-if="t107C.image2_p1_data['code'] === 'appearing-image'">
+                        <img ng-src="{{::t107C.image2_p1}}" style="width: 300px;">
+                        <div isp-appearingimage
+                             isp-image-url="{{t107C.image2_p1_data['filepath']}}"
+                             isp-data="t107C.image2_p1_data">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- no special formatting -->
+                <div class="center" ng-if="t107C.image2_p1_mode === 'none'">
+                    <img ng-src="{{::t107C.image2_p1}}" style="width: 350px;">
+                </div>
+
+                <div ng-if="t107C.stage === 2 && t107C.activated" isp-pointer isp-pointer-style="{ 'left': '600px', 'top': '200px'}" isp-hide-after="false" isp-delay="2000"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--  PAGE 2  -->
+
+
+    <div ng-if="t107C.showingPanel === 'one'" style="margin-top: 60px;">
+
+        <!-- 'Focus' layout -->
+        <div class="isp-task107-focus-container" ng-if="t107C.image1_p2_mode === 'focus'">
+
+            <div isp-imagefocus
+                 isp-image-url="{{t107C.image1_p2}}"
+                 isp-data="t107C.image1_p2_data"></div>
+
+        </div>
+
+        <!-- 'Overlay' layout -->
+        <div class="isp-task107-focus-container" ng-if="t107C.image1_p2_mode === 'overlay'">
+
+            <div ng-if="t107C.image1_p2_data['code'] === 'zoomable-image'">
+                <img ng-src="{{::t107C.image1_p2}}" style="width: 750px;">
+                <div isp-zoomableimage
+                     isp-image-url="{{t107C.image1_p2_data['filepath']}}"
+                     isp-data="t107C.image1_p2_data">
+                </div>
+
+            </div>
+
+            <div ng-if="t107C.image1_p2_data['code'] === 'appearing-image'">
+                <img ng-src="{{::t107C.image1_p2}}" style="width: 750px;">
+                <div isp-appearingimage
+                     isp-image-url="{{t107C.image1_p2_data['filepath']}}"
+                     isp-data="t107C.image1_p2_data">
+                </div>
+
+            </div>
+
+            <div ng-if="t107C.image1_p2_data['code'] === 'playable-sound'">
+                <img ng-src="{{::t107C.image1_p2}}" style="width: 750px;">
+                <div isp-playablesound
+                     isp-playablesound-overlay-data="t107C.image1_p2_data"
+                     isp-bounce-pointer="false"
+                     isp-playablesound-url="{{t107C.image1_p2_data['filepath']}}"
+                     isp-delay-start="{{::t107C.image1_p2_data['delay']}}">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- no special formatting -->
+        <div class="center" ng-if="t107C.image1_p2_mode === 'none'">
+            <img ng-src="{{::t107C.image1_p2}}" style="width: 750px;">
+        </div>
+
+
+    </div>
+
+    <div ng-if="t107C.showingPanel === 'two'" style="margin-top: 60px;">
+
+        <!-- 'Focus' layout -->
+        <div class="isp-task107-focus-container" ng-if="t107C.image2_p2_mode === 'focus'" >
+
+            <div isp-imagefocus
+                 isp-image-url="{{t107C.image2_p2}}"
+                 isp-data="t107C.image2_p2_data"></div>
+
+        </div>
+
+        <!-- 'Overlay' layout -->
+        <div class="isp-task107-focus-container" ng-if="t107C.image2_p2_mode === 'overlay'" >
+
+            <div ng-if="t107C.image2_p2_data['code'] === 'zoomable-image'">
+                <img ng-src="{{::t107C.image2_p2}}" style="width: 750px;">
+                <div isp-zoomableimage
+                     isp-image-url="{{t107C.image2_p2_data['filepath']}}"
+                     isp-data="t107C.image2_p2_data">
+                </div>
+
+            </div>
+
+            <div ng-if="t107C.image2_p2_data['code'] === 'appearing-image'">
+                <img ng-src="{{::t107C.image2_p2}}" style="width: 750px;">
+                <div isp-appearingimage
+                     isp-image-url="{{t107C.image2_p2_data['filepath']}}"
+                     isp-data="t107C.image2_p2_data">
+                </div>
+
+            </div>
+
+            <div ng-if="t107C.image2_p2_data['code'] === 'playable-sound'">
+                <img ng-src="{{::t107C.image2_p2}}" style="width: 750px;">
+                <div isp-playablesound
+                     isp-playablesound-overlay-data="t107C.image2_p2_data"
+                     isp-bounce-pointer="false"
+                     isp-playablesound-url="{{t107C.image1_p2_data['filepath']}}"
+                     isp-delay-start="{{::t107C.image2_p2_data['delay']}}">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- no special formatting -->
+        <div class="center" ng-if="t107C.image2_p2_mode === 'none'">
+            <img ng-src="{{::t107C.image2_p2}}" style="width: 750px;">
+        </div>
+
+    </div>
+
+</div>

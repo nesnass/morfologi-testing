@@ -1,0 +1,71 @@
+<ion-view isp-resize ng-controller="PictureBookController as pbC">
+    <ion-content scroll="false" has-bouncing="false">
+
+        <!-- Slider pages -->
+        <ion-slides  options="pbC.slider.sliderOptions" slider="pbC.slider.sliderDelegate">
+            <ion-slide-page ng-repeat="background in pbC.book.backgrounds" on-drag-start="pbC.pageSliding(true)" on-drag-end="pbC.pageSliding(false)" style="position: relative;">
+
+                <!-- Background image -->
+                <img ng-src="content/picturebooks/{{::pbC.book.reference}}/{{::background}}.jpg">
+
+                <!-- Zoomable Images -->
+                <div ng-repeat="overlay in pbC.pageOverlays.zoomable_images" ng-hide="pbC.sliding">
+                    <div isp-zoomableimage
+                         isp-image-url="{{'content/picturebooks/' + pbC.dataService.getBook().reference + '/' +
+                            overlay.id + '.' + overlay.type}}"
+                         isp-data="overlay"
+                         isp-bounce-pointer="{{pbC.bouncePointer}}"
+                         isp-delay-start="{{::pbC.displayDelay}}"
+                         isp-on-completed="pbC.overlayOnCompleted(overlay)">
+                    </div>
+                </div>
+
+                <!-- Appearing Images -->
+                <div ng-repeat="overlay in pbC.pageOverlays.appearing_images" ng-hide="pbC.sliding">
+                    <div isp-appearingimage
+                         isp-data="overlay"
+                         isp-image-url="{{'content/picturebooks/' + pbC.dataService.getBook().reference + '/' +
+                            overlay.id + '.' + overlay.type}}"
+                         isp-bounce-pointer="{{pbC.bouncePointer}}"
+                         isp-delay-start="{{::pbC.displayDelay}}"
+                         isp-on-completed="pbC.overlayOnCompleted(overlay)">
+                    </div>
+                </div>
+
+                <!-- Playable Sounds -->
+                <div ng-repeat="overlay in pbC.pageOverlays.playable_audio" ng-hide="pbC.sliding">
+                    <div isp-playablesound
+                         isp-playablesound-overlay-data="overlay"
+                         isp-bounce-pointer="{{pbC.bouncePointer}}"
+                         isp-delay-start="{{::pbC.displayDelay}}"
+                         isp-playablesound-url="content/picturebooks/{{::pbC.book.reference}}/{{::overlay.id}}.mp3"
+                         isp-playablesound-on-completed="pbC.overlayOnCompleted(overlay)">
+                    </div>
+                </div>
+
+                <!-- Focus Image -->
+                <div ng-repeat="overlay in pbC.pageOverlays.focus_images" ng-hide="pbC.sliding">
+                    <div isp-imagefocus
+                         isp-image-url="{{'content/picturebooks/' + pbC.dataService.getBook().reference + '/' +
+                            overlay.id + '.' + overlay.type}}"
+                         isp-data="overlay"
+                         isp-delay-start="{{::pbC.displayDelay}}"
+                         isp-bounce-pointer="{{pbC.bouncePointer}}"
+                         isp-on-completed="pbC.overlayOnCompleted(overlay)"></div>
+                </div>
+
+                <!-- Exit button -->
+                <img ng-show="pbC.activePageIndex === pbC.book.backgrounds.length-1 || pbC.reachedEnd"
+                     class="isp-common-icon bottom-right-book"
+                     ng-src="content/common/images/forward-arrow-day{{pbC.selectedDayIndex}}.png"
+                     ng-class="{'pulse' : true}"
+                     ng-click="pbC.completeBook()">
+
+            </ion-slide-page>
+        </ion-slides>
+
+    </ion-content>
+
+
+
+</ion-view>

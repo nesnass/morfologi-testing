@@ -1,0 +1,58 @@
+/*------------------------------------------------------*\
+  Visitracker
+  ===========
+  Variables
+\*------------------------------------------------------*/
+
+$isp-colour-green  : #29A44C;
+$isp-colour-orange : #FD7F36;
+$isp-colour-blue   : #1AA3E4;
+
+$color-primary    : #16b8ff;
+
+$color-success    : #16ffa7;
+$color-warning    : #f49774;
+$color-danger     : red;
+$color-info       : $color-primary;
+$color-lambo      : #B21413;
+
+$color-black      : #000;
+$color-white      : #fff;
+$color-gray       : #222222;
+$color-lightGray  : #e2e2e2;
+$color-yellow    : #ffff00;
+$text-color       : $color-black;
+
+
+$light:                           $color-white !default;      // white
+$stable:                          $color-lightGray !default;   // lightgray
+$positive:                        $color-primary !default;   // primary, info
+$balanced:                        $color-success !default;   // success
+$energized:                       $color-warning !default;   // warning
+$assertive:                       $color-danger !default;   // danger
+$royal:                           #886aea !default;   //
+$dark:                            $color-gray !default;   // gray
+
+
+/*------------------------------------------------------*\
+   Colours
+\*------------------------------------------------------*/
+
+$base-background-color:           $dark !default;
+
+/*------------------------------------------------------*\
+   Typography
+\*------------------------------------------------------*/
+
+$font-sans--medium              :    'Gotham Medium', 'Helvetica', sans-serif;
+$font-family-sans-serif         :    'Gotham Book', 'Helvetica', sans-serif !default;
+$font-family-light-sans-serif   :    'Gotham Light', 'Helvetica', sans-serif !default;
+$font-family-serif              :    'Merriweather', 'Georgia', serif !default;
+$font-family-monospace          :     monospace !default;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../lib/ionic/scss/ionic";

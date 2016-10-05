@@ -1,0 +1,50 @@
+<div ng-controller="Task201Controller as t201C">
+
+
+    <div class="row" style="margin-top: 60px; height: 160px;">
+
+        <div class="col" ng-repeat="item in t201C.items">
+            <div id="ispTaskDragItem{{$index}}" ng-drag="true" ng-drag-data="item" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-click="t201C.clickImage(item['audio'])" ng-src="{{item['file']}}" style="height: 150px; padding: 5px;">
+            </div>
+        </div>
+
+    </div>
+
+    <hr ng-hide="t201C.items.length === 0">
+
+    <div class="row" style="height: 400px; margin-top: 50px;">
+        <div class="col center">
+
+
+            <div id="ispTaskDropzoneTrash" class="isp-task-drop-zone-trash" ng-drop="true" ng-drop-success="t201C.onDropTrashComplete($data)" style="position: relative; width: 150px; height: 150px; margin-top: 190px;">
+                <img src="content/common/images/trash-bg.png" style="position: absolute; width: 150px; bottom: 0; left: 0; z-index: 0;">
+
+                <div class="isp-dragged-item" ng-repeat="item in t201C.droppedTrashObjects" id="ispTaskDroppedTrashItem{{$index}}" style="position: absolute;">
+                    <img ng-src="{{item['file']}}" ng-style="item['style']">
+                </div>
+
+                <img src="content/common/images/trash-fg.png" style="position: absolute; width: 150px; bottom: 0; left: 0;">
+
+            </div>
+
+        </div>
+        <div class="col center">
+
+            <div id="ispTaskDropzoneBox" class="isp-task-drop-zone-box" ng-drop="true" ng-drop-success="t201C.onDropBoxComplete($data)" style="position: relative; width: 450px; height: 450px;">
+                <img src="content/common/images/box-bg.png" style="position: absolute; width: 450px; top: 0; left: 0; z-index: 0;">
+
+                <div class="isp-dragged-item" ng-repeat="item in t201C.droppedBoxObjects" id="ispTaskDroppedBoxItem{{$index}}" style="position: absolute;">
+                    <img ng-src="{{item['file']}}" ng-style="item['style']">
+                </div>
+
+                <img src="content/common/images/box-fg.png" style="position: absolute; width: 450px; top: 0; left: 0;">
+                <img ng-src="{{'content/' + t201C.word + '/main.jpg'}}" style="position: absolute; width: 100px; bottom: 108px; left: 100px; transform: skew(0deg,17deg);">
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

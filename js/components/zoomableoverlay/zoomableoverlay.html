@@ -1,0 +1,11 @@
+<div ng-click="ziC.clickImage()" ng-style="ziC.styleSet">
+
+    <img id="zoomingImage" style="width: 100%;" ng-style="{'opacity': ziC.opacity}"
+         ng-show="ziC.showImage" ng-src="{{::ziC.imageUrl}}">
+
+    <img id="bouncingArrow" class="isp-bouncing-arrow" ng-class="{'pulse' : ziC.bounce}"
+         ng-style="{'left': ziC.overlayData.pointer['x'] + 'px', 'top': ziC.overlayData.pointer['y'] + 'px'}"
+         ng-show="ziC.showBounce"
+         ng-src="content/common/images/pointer.png">
+    
+</div>

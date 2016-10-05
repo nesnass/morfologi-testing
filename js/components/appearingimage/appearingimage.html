@@ -1,0 +1,7 @@
+<div ng-click="aiC.clickImage()" ng-style="aiC.styleSet">
+    <img class="isp-bouncing-arrow" ng-class="{'pulse' : aiC.bounce}"
+         ng-style="{'left': aiC.overlayData.pointer['x'] + 'px', 'top': aiC.overlayData.pointer['y'] + 'px'}"
+         ng-show="aiC.showBounce"
+         ng-src="content/common/images/pointer.png">
+    <img style="width: 100%;" ng-style="{'opacity': aiC.opacity}" ng-show="aiC.showImage" ng-src="{{aiC.imageUrl}}">
+</div>

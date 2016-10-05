@@ -1,0 +1,43 @@
+{
+  "name": "morfologi",
+  "version": "0.1.0",
+  "description": "Morfologi application",
+  "repository": "https://github.com/engagelab/ISP-1",
+  "license": "UNLICENSED",
+  "author": [
+    "richarne@uv.uio.no"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "require-dir": "^0.3.0",
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "bower": "^1.7.1",
+    "jshint": "^2.x",
+    "typescript": "^1.7.3",
+    "tslint": "^3.x",
+    "normalize.css": "^4.x",
+    "typedoc": "^0.3.x",
+    "gulp-typedoc": "^2.x",
+    "gulp-sass": "^2.1.1",
+    "gulp-concat": "^2.6.0",
+    "merge-stream": "^1.0.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-exec": "^2.1.2",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass-lint": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-util": "^3.0.7",
+    "gulp-tslint": "^5.0.0",
+    "graceful-fs": "^4.1.x"
+  },
+  "scripts": {
+    "tsc": "tsc -p src -w",
+    "start": "live-server --open=src",
+    "postinstall": ["gulp", "bower install"]
+  }
+}

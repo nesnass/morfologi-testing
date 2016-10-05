@@ -1,0 +1,30 @@
+<div ng-controller="Task307Controller as t307C">
+
+    <div class="row" style="margin-top: 50px; max-height: 600px;" ng-if="t307C.videoUrl != ''">
+
+        <div class="col center" style="">
+            <div isp-video-player
+                 isp-video-url="{{t307C.videoUrl}}"
+                 isp-poster-url="{{t307C.posterUrl}}"
+                 isp-type="none"
+                 isp-on-play="t307C.videoPlaying()"
+                 isp-active="t307C.videoActive"
+                 isp-on-completed="t307C.videoPlayed()">
+
+            </div>
+        </div>
+    </div>
+
+    <img ng-hide="t307C.videoActive.playing || t307C.played" src="content/common/images/film2.png" style="position: absolute; top: 0; left: 100px;">
+
+    <img ng-hide="t307C.videoActive.playing" src="content/common/images/play.png" ng-click="t307C.playVideo()"
+         style="width: 100px; position: absolute; bottom: 50px; left: 350px;">
+
+    <div ng-if="t307C.showPointer" isp-pointer isp-pointer-style="{ 'left': '370px', 'bottom': '0'}" isp-timeout="4000" isp-hide-after="true"></div>
+
+    <div class="row" style="margin-top: 80px; margin-left: 100px;" ng-if="t307C.videoUrl == ''">
+        <p>Du har ikke tatt opp noe. Gå tilbake til gårsdagens siste oppgave og gjør et opptak</p>
+    </div>
+
+
+</div>

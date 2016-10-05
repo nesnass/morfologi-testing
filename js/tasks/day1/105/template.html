@@ -1,0 +1,24 @@
+<div ng-controller="Task105Controller as t105C">
+
+    <div class="row" style="margin-top: 160px;">
+        <div class="col">
+
+            <img ng-class="{'highlight-letter': t105C.lightLetter}"
+                 ng-src="{{::t105C.letterImageUrl}}"
+                 ng-click="t105C.clickLetter()"
+                 style="height: 400px;">
+
+        </div>
+
+        <div class="col col-center">
+
+            <img ng-class="{'highlight-letter': t105C.lightMainImage}"
+                 ng-src="{{::t105C.mainImageUrl}}"
+                 ng-click="t105C.clickImage()"
+                 style="width: 300px;">
+
+        </div>
+
+    </div>
+
+</div>
