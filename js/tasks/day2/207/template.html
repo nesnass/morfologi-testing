@@ -1,0 +1,25 @@
+<div ng-controller="Task207Controller as t207C">
+
+    <div class="row" style="margin-top: 50px; max-height: 600px;" ng-if="t207C.videoUrl !== ''">
+        <div class="col center">
+            <div isp-video-player
+                 isp-video-url="{{t207C.videoUrl}}"
+                 isp-poster-url="{{t207C.posterUrl}}"
+                 isp-type="task8"
+                 isp-on-play="t207C.videoPlaying()"
+                 isp-active="t207C.videoActive"
+                 isp-on-completed="t207C.videoPlayed()">
+
+            </div>
+        </div>
+    </div>
+
+    <img ng-if="t207C.videoUrl == ''" src="content/common/images/film.png" style="margin-left: 100px;">
+
+    <img src="content/common/images/record-start.png" ng-show="!t207C.playing" ng-click="t207C.captureVideo()"
+         style="width: 100px; position: absolute; bottom: 50px; left: 350px;">
+
+    <div ng-if="t207C.showPointer" isp-pointer isp-pointer-style="{ 'left': '370px', 'bottom': '0'}" isp-timeout="3000" isp-hide-after="true"></div>
+
+
+</div>

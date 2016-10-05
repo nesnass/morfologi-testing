@@ -1,0 +1,40 @@
+<div ng-controller="Task300Controller as t300C" style="margin-left: 50px;">
+
+
+    <img ng-src="{{t300C.selectedItem['image']}}" style="position: absolute; height: 600px;"
+         ng-style="t300C.selectedItem['style']" ng-click="t300C.clickLargeImage()" class="isp-task30X-transition">
+
+    <!--div ng-show="t300C.showShrink" style="position: absolute; bottom: -50px; left: 400px;">
+
+        <img class="isp-task-button isp-detail-icon center"
+             ng-src="content/common/images/forward-arrow.png"
+             ng-click="t300C.shrinkFlippy()">
+    </div-->
+
+
+    <div class="row" style="margin-top: 60px;" ng-repeat="row in [0,2]" ng-show="t300C.activate">
+            <div class="col" ng-repeat="col in [0,1]">
+                <flippy
+                        class="fancy isp-flippy"
+                        flip="['click']"
+                        flip-back="['custom:FLIP_EVENT_OUT']"
+                        duration="800"
+                        timing-function="ease-in-out"
+                        ng-click="t300C.clickFlippy(row + col)">
+
+                    <flippy-front>
+                        <img ng-src="content/common/images/questionmark.png">
+                    </flippy-front>
+
+                    <flippy-back>
+                        <div class="isp-flippy-image-background" ng-style="t300C.getBackgroundImage(row + col)"></div>
+                    </flippy-back>
+
+                </flippy>
+
+            </div>
+
+    </div>
+
+
+</div>

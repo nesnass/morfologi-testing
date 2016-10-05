@@ -1,0 +1,94 @@
+<div ng-controller="TaskC106Controller as C106C">
+
+    <div ng-if="C106C.page === 1" style="position: relative;">
+
+        <img style="position: absolute; top: -100px; left: -150px; width: 1224px;" src="content/common/images/consolidation/task7/alienbackground.jpg">
+
+        <div isp-zoomableimage
+             isp-image-url="content/common/images/consolidation/task7/alien-spaceship.png"
+             isp-on-completed="C106C.shipLanded()"
+             isp-data="C106C.alienData.ship">
+        </div>
+
+        <div isp-zoomableimage
+             ng-if="C106C.showAlienPlatform"
+             isp-image-url="content/common/images/consolidation/task7/alien-spaceship-door.png"
+             isp-on-completed="C106C.platformOpen()"
+             isp-data="C106C.alienData.platform">
+        </div>
+
+        <img src="content/common/images/consolidation/task7/alien-sitting.png"
+             style="position: absolute; left: 350px; top: 200px; width: 200px;" ng-show="C106C.showAlien">
+        <!--img src="content/common/images/consolidation/task7/alien-antennae.png"
+             style="position: absolute; left: 350px; top: 200px; width: 182px;" ng-show="C106C.showAntennae"-->
+
+        <div class="isp-fade" ng-style="{'opacity' : C106C.opacity }" style="position: absolute; top: 580px; left: 220px;">
+            <img src="content/common/images/consolidation/dontknow.png" style="width: 150px;" ng-click="C106C.goToHelpScreen()"
+                 ng-class="{ 'highlight-letter': C106C.highlightIdontknow }" ng-hide="C106C.attempts > 2">
+            <img src="content/common/images/consolidation/iknow.png" style="width: 150px; margin-left: 100px;" ng-click="C106C.goToAnswerScreen()"
+                 ng-class="{ 'highlight-letter': C106C.highlightIknow }">
+        </div>
+
+    </div>
+
+
+    <div ng-if="C106C.page === 2">
+
+        <img ng-src="{{C106C.mainHelpPic}}"
+             style="position: absolute; left: 0; top: 200px; width: 400px;">
+
+        <img ng-src="{{C106C.helpItems[0]['image']}}" ng-click="C106C.clickItem(C106C.helpItems[0])"
+             ng-class="{'isp-border-green': C106C.helpItems[0]['highlighted'] && C106C.helpItems[0]['correct'],
+                        'isp-border-red': C106C.helpItems[0]['highlighted'] && !C106C.helpItems[0]['correct'],
+                        'highlight-letter': C106C.helpItems[0]['focussed'] }"
+             style="position: absolute; left: 500px; top: 100px; width: 200px;">
+
+        <img ng-src="{{C106C.helpItems[1]['image']}}" ng-click="C106C.clickItem(C106C.helpItems[1])"
+             ng-class="{'isp-border-green': C106C.helpItems[1]['highlighted'] && C106C.helpItems[1]['correct'],
+                        'isp-border-red': C106C.helpItems[1]['highlighted'] && !C106C.helpItems[1]['correct'],
+                        'highlight-letter': C106C.helpItems[1]['focussed'] }"
+             style="position: absolute; left: 500px; top: 300px; width: 200px;">
+
+        <img ng-src="{{C106C.helpItems[2]['image']}}" ng-click="C106C.clickItem(C106C.helpItems[2])"
+             ng-class="{'isp-border-green': C106C.helpItems[2]['highlighted'] && C106C.helpItems[2]['correct'],
+                        'isp-border-red': C106C.helpItems[2]['highlighted'] && !C106C.helpItems[2]['correct'],
+                        'highlight-letter': C106C.helpItems[2]['focussed'] }"
+             style="position: absolute; left: 500px; top: 500px; width: 200px;">
+
+    </div>
+
+    <div ng-if="C106C.page === 3" style="position: relative;">
+
+        <img style="position: absolute; top: -100px; left: -150px; width: 1224px;" src="content/common/images/consolidation/task7/alienbackground.jpg">
+
+        <img src="content/common/images/consolidation/task7/alien-confused.png"
+             style="position: absolute; left: 0; top: 370px; width: 200px;">
+        <img ng-src="content/{{C106C.dayWord}}/main.jpg"
+             style="position: absolute; left: 150px; top: 58px; width: 390px;">
+        <img ng-src="content/common/images/questionmark.png"
+             style="position: absolute; left: 150px; top: 50px; width: 390px;">
+        <img src="content/common/images/consolidation/task7/thoughtbubble2.png"
+             style="position: absolute; right: 150px; top: 0; width: 600px; z-index: 100;">
+
+        <div class="isp-fade" ng-style="{'opacity' : C106C.opacity }" style="position: absolute; top: 550px; left: 200px;">
+            <img src="content/common/images/consolidation/dontknow.png" style="width: 150px;" ng-click="C106C.goToHelpScreen()" ng-hide="C106C.attempts > 2">
+            <img src="content/common/images/consolidation/iknow.png" style="width: 150px; margin-left: 100px;" ng-click="C106C.goToFinalScreen()">
+        </div>
+
+    </div>
+
+    <div ng-if="C106C.page === 4" style="position: relative;">
+
+        <img style="position: absolute; top: -100px; left: -150px; width: 1224px;" src="content/common/images/consolidation/task7/alienbackground.jpg">
+
+        <img src="content/common/images/consolidation/task7/alien-happy.png"
+             style="position: absolute; left: 0; top: 370px; width: 200px;">
+        <img ng-src="content/{{C106C.dayWord}}/main.jpg"
+             style="position: absolute; left: 150px; top: 58px; width: 390px;">
+        <img src="content/common/images/consolidation/task7/thoughtbubble2.png"
+             style="position: absolute; right: 150px; top: 0; width: 600px; z-index: 100;">
+
+    </div>
+
+
+</div>

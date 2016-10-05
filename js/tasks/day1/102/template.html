@@ -1,0 +1,102 @@
+<div ng-controller="Task102Controller as t102C" style="margin-left: 20px;">
+
+    <img ng-src="content/{{::t102C.word}}/category/category.jpg" style="position: absolute; width: 300px; left: 265px; top: 180px;" ng-click="t102C.clickMainImage()">
+
+    <div class="row" style="margin-top: 60px;">
+        <div class="col">
+            <flippy
+                    class="fancy isp-flippy center"
+                    flip="['click']"
+                    flip-back="['custom:FLIP_EVENT_OUT']"
+                    duration="800"
+                    timing-function="ease-in-out"
+                    ng-click="t102C.clickFlippy(0)"
+                    style="width: 175px; height: 175px;">
+
+                <flippy-front>
+                    <img ng-src="content/common/images/questionmark.png">
+                </flippy-front>
+
+                <flippy-back>
+                    <div class="isp-flippy-image-background" ng-style="t102C.getBackgroundImage(0)"></div>
+                </flippy-back>
+
+            </flippy>
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <flippy
+                    class="fancy isp-flippy center"
+                    flip="['click']"
+                    flip-back="['custom:FLIP_EVENT_OUT']"
+                    duration="800"
+                    timing-function="ease-in-out"
+                    ng-click="t102C.clickFlippy(1)"
+                    style="width: 175px; height: 175px;">
+
+                <flippy-front>
+                    <img ng-src="content/common/images/questionmark.png">
+                </flippy-front>
+
+                <flippy-back>
+                    <div class="isp-flippy-image-background" ng-style="t102C.getBackgroundImage(1)"></div>
+                </flippy-back>
+
+            </flippy>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col" style="height: 150px;">
+            <p></p>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <flippy
+                    class="fancy isp-flippy center"
+                    flip="['click']"
+                    flip-back="['custom:FLIP_EVENT_OUT']"
+                    duration="800"
+                    timing-function="ease-in-out"
+                    ng-click="t102C.clickFlippy(2)"
+                    style="width: 175px; height: 175px;">
+
+                <flippy-front>
+                    <img ng-src="content/common/images/questionmark.png">
+                </flippy-front>
+
+                <flippy-back>
+                    <div class="isp-flippy-image-background" ng-style="t102C.getBackgroundImage(2)"></div>
+                </flippy-back>
+
+            </flippy>
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <flippy
+                    class="fancy isp-flippy center"
+                    flip="['click']"
+                    flip-back="['custom:FLIP_EVENT_OUT']"
+                    duration="800"
+                    timing-function="ease-in-out"
+                    ng-click="t102C.clickFlippy(3)"
+                    style="width: 175px; height: 175px;">
+
+                <flippy-front>
+                    <img ng-src="content/common/images/questionmark.png">
+                </flippy-front>
+
+                <flippy-back>
+                    <div class="isp-flippy-image-background" ng-style="t102C.getBackgroundImage(3)"></div>
+                </flippy-back>
+
+            </flippy>
+        </div>
+    </div>
+
+
+</div>

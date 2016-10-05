@@ -1,0 +1,27 @@
+<div ng-controller="Task100Controller as t100C" style="margin-left: 50px;">
+
+
+    <div class="row" style="margin-top: 60px;" ng-repeat="row in [0,2]">
+            <div class="col" ng-repeat="col in [0,1]" >
+                <flippy
+                        class="fancy isp-flippy"
+                        flip="['click']"
+                        flip-back="['custom:FLIP_EVENT_OUT']"
+                        duration="800"
+                        timing-function="ease-in-out"
+                        ng-click="t100C.clickFlippy(row + col)">
+
+                    <flippy-front>
+                        <img ng-src="content/common/images/questionmark.png">
+                    </flippy-front>
+
+                    <flippy-back>
+                        <div class="isp-flippy-image-background" ng-style="t100C.getBackgroundImage(row + col)"></div>
+                    </flippy-back>
+
+                </flippy>
+            </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,201 @@
+<ion-view ng-controller="MainPanelController as mpC">
+
+    <ion-content scroll="false" has-bouncing="false">
+
+        <div ng-if="mpC.showingPanel === 'avatar'">
+
+            <div class="row" style="margin-top: 80px;">
+                <div class="col" ng-click="mpC.selectAvatar(0)">
+                    <img class="center" ng-src="content/common/images/avatar-0.png">
+                    <!--p class="center">Avatar A</p-->
+                </div>
+                <div class="col" ng-click="mpC.selectAvatar(1)">
+                    <img class="center" ng-src="content/common/images/avatar-1.png">
+                    <!--p class="center">Avatar B</p-->
+                </div>
+                <div class="col" ng-click="mpC.selectAvatar(2)">
+                    <img class="center" ng-src="content/common/images/avatar-2.png">
+                    <!--p class="center">Avatar C</p-->
+                </div>
+            </div>
+            <div class="row" style="margin-top: 100px;">
+                <div class="col" ng-click="mpC.selectAvatar(3)">
+                    <img class="center" ng-src="content/common/images/avatar-3.png">
+                    <!--p class="center">Avatar D</p-->
+                </div>
+                <div class="col" ng-click="mpC.selectAvatar(4)">
+                    <img class="center" ng-src="content/common/images/avatar-4.png">
+                    <!--p class="center">Avatar E</p-->
+                </div>
+                <div class="col" ng-click="mpC.selectAvatar(5)">
+                    <img class="center" ng-src="content/common/images/avatar-5.png">
+                    <!--p class="center">Avatar F</p-->
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-if="mpC.showingPanel === 'username'">
+            <div class="bar bar-header bar-balanced">
+                <h1 class="title">Identitet</h1>
+            </div>
+            <br><br>
+            <div class="list" style="height: 150px; margin-top: 50px;">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Tast inn iPadens identitet merket på baksiden</span>
+                    <input type="text" placeholder="Skriv her..." ng-model="mpC.username">
+                </label>
+            </div>
+            <button class="button button-positive" style="margin-left: 30px;" ng-click="mpC.setUsername()">
+                Bekreft
+            </button>
+        </div>
+
+        <div ng-if="mpC.showingPanel === 'weeks'">
+
+            <!-- ***********  TESTING ONLY !!! ************* -->
+            <div ng-if="!mpC.weekSelected && mpC.showCheats" style="position: fixed; z-index: 100; bottom: 0; left: 100px; width: 200px;">
+                <button class="button button-warning" ng-click="mpC.enableAllWeeks()" style="margin-bottom: 20px; margin-left: 10px;">Enable All Weeks</button>
+            </div>
+            <!-- ******************************************* -->
+
+
+            <div class="card isp-week-card" ng-if="!mpC.weekSelected" ng-repeat="week in mpC.weeks" ng-click="mpC.selectWeek($index)">
+
+                <div class="item item-image isp-no-border" ng-class="{'isp-week-current': mpC.achievement.weekIndex === $index - 1}">
+                    <img ng-class="{'isp-week-image-faded': !week.completed}"
+                         ng-src="content/{{week['word_en'] + '/thumb' + (week.completed ? '2' : '') + '.jpg'}}">
+                    <img class="isp-week-avatar" ng-src="content/common/images/avatar-{{mpC.achievement.avatar}}.png" ng-show="mpC.achievement.weekIndex === $index - 1">
+                    <!--p class="isp-week-label" ng-show="week.completed" >{{::week['word_' + mpC.language]}}</p-->
+                    <!--p class="isp-week-label" ng-show="week.completed" >{{'WEEK_MENU_'+$index | translate }}</p-->
+                    <p class="isp-week-number" ng-hide="week.completed || mpC.achievement.weekIndex === $index - 1" >{{$index + 1}}</p>
+                </div>
+
+                <img class="isp-week-avatar" style="width: 50px;" ng-src="content/common/images/avatar-{{mpC.achievement.avatar}}.png" ng-click="mpC.showingPanel = 'avatar'">
+
+            </div>
+
+            <div ng-if="mpC.weekSelected">
+
+                <div ng-if="!mpC.showSkipDay">
+                    <img ng-src="content/common/images/pathday-{{(mpC.consolidation ? 'C' : '') + mpC.pathIndex}}.png">
+                    <div style="position: absolute; width: 350px; height: 500px; left: 0; top: 150px;" ng-click="mpC.selectDay(0, $event)" ng-show="mpC.pathIndex >= 0  || mpC.achievement.weekIndex >= mpC.selectedWeekIndex">
+                        <img class="isp-week-avatar isp-week-avatar__day-green"
+                             ng-show="mpC.pathIndex === 0 && mpC.achievement.weekIndex === mpC.selectedWeekIndex - 1"
+                             ng-src="content/common/images/avatar-{{mpC.achievement.avatar}}.png">
+                    </div>
+                    <div style="position: absolute; width: 325px; height: 500px; left: 350px; top: 150px;" ng-click="mpC.selectDay(1, $event)" ng-show="mpC.pathIndex >= 1  || mpC.achievement.weekIndex >= mpC.selectedWeekIndex">
+                        <img class="isp-week-avatar isp-week-avatar__day-orange"
+                             ng-show="mpC.pathIndex === 1 && mpC.achievement.weekIndex === mpC.selectedWeekIndex - 1"
+                             ng-src="content/common/images/avatar-{{mpC.achievement.avatar}}.png">
+                    </div>
+                    <div style="position: absolute; width: 310px; height: 500px; left: 710px; top: 100px;" ng-click="mpC.selectDay(2, $event)" ng-show="mpC.pathIndex >= 2  || mpC.achievement.weekIndex >= mpC.selectedWeekIndex">
+                        <img class="isp-week-avatar isp-week-avatar__day-blue"
+                             ng-show="mpC.pathIndex === 2 && mpC.achievement.weekIndex === mpC.selectedWeekIndex - 1"
+                             ng-src="content/common/images/avatar-{{mpC.achievement.avatar}}.png">
+                    </div>
+
+                    <!-- Skip Day button -->
+                    <img ng-if="mpC.achievement.weekIndex < mpC.selectedWeekIndex" style="position: absolute; width: 80px; top: 720px; left: 900px;"
+                         ng-src="content/common/images/frog.png"
+                         on-hold="mpC.beginHoldSkipDay($event)" on-release="mpC.releaseToSkipDay($event)">
+
+                    <!-- Back button -->
+                    <img class="isp-common-icon bottom-left"
+                         ng-src="content/common/images/home.png"
+                         ng-click="mpC.backToWeeks()">
+
+                    <!-- ***********  TESTING ONLY !!! ************* -->
+                    <div ng-if="mpC.showCheats" style="position: fixed; z-index: 100; bottom: 0; left: 100px;">
+                        <button class="button button-warning" ng-click="mpC.skipToday('frosk')" style="margin-bottom: 20px; margin-left: 10px;">Skip Day</button>
+                    </div>
+                    <!-- ******************************************* -->
+
+                </div>
+
+                <div ng-if="mpC.showSkipDay">
+
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Vennligst bekreft at du ønsker å hoppe over denne dagen ved å skrive inn passordet:</span>
+                            <input type="text" placeholder="passord" ng-model="mpC.skipDayPassword">
+                        </label>
+                    </div>
+
+                    <div class="row" style="margin-top: 50px;">
+                        <button style="margin-left: 20px;" class="button button-warning" ng-click="mpC.skipToday()">
+                            Bekreft
+                        </button>
+                        <button style="margin-left: 20px;" class="button button-positive" ng-click="mpC.showSkipDay = false">
+                            Tilbake
+                        </button>
+                    </div>
+
+                    <div class="row" style="margin-top: 100px;">
+                        <div class="col" style="padding: 20px;">
+                            <p>Sample period ends:<br> {{mpC.formalStartDate.toString()}}</p>
+                        </div>
+
+                        <div class="col" style="padding: 20px;">
+                                <p>Sync status:</p>
+                            <span style="color: orange;" ng-show="mpC.dataService.getStatus().posting_data">
+                                Update in progress... <!--ion-spinner icon="spiral"></ion-spinner-->
+                            </span>
+                            <span style="color: red;" ng-show="mpC.dataService.getStatus().unsynced_data && !mpC.dataService.getStatus().posting_data">
+                                Un-synced data exists
+                            </span>
+                            <span style="color: green;" ng-show="!mpC.dataService.getStatus().unsynced_data && !mpC.dataService.getStatus().posting_data">
+                                Up to date
+                            </span>
+                        </div>
+
+                        <div class="col" style="padding: 20px;">
+                                <p>Network status:</p>
+                            <span  style="color: green;" ng-show="mpC.dataService.getStatus().online">
+                                Online
+                            </span>
+                            <span  style="color: orange;" ng-hide="mpC.dataService.getStatus().online">
+                                Offline
+                            </span>
+                        </div>
+
+                        <div class="col" style="padding: 20px;">
+                                <p>Disk space available:</p>
+                            <span>
+                                {{mpC.dataService.getStatus().disk_space}} Mb
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="col" style="padding: 20px;">
+                            <span>App Version: {{mpC.appVersion}}</span>
+                        </div>
+                        <div class="col" style="padding: 20px;" ng-if="mpC.showCheats">
+                            <p>Deactivate recording and post usage data manually here. Available until the end of 'sample' period</p>
+                            <div>
+                                <label>Auto send data<input type="checkbox" style="margin-left: 10px;" ng-model="mpC.dataService.getSettings().automatic_send_data"></label>
+                                <button class="button button-warning" style="margin-top: 20px;" ng-show="!mpC.dataService.getSettings().automatic_send_data"
+                                        ng-click="mpC.dataService.attemptToPostUsageData()">Post usage data now</button>
+                            </div>
+                        </div>
+                        <div class="col" style="padding: 20px;">
+                        </div>
+                        <div class="col" style="padding: 20px;" ng-if="mpC.showCheats">
+                            <p>Progress through the app is stored on your iPad. Click here to remove your progress and return to the beginning. This feature is only available during the 'sample' period</p>
+                            <button class="button button-warning" style="margin-top: 20px;" ng-click="mpC.dataService.removeStorage()">Clear storage</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </ion-content>
+
+
+
+
+</ion-view>

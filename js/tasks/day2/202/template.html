@@ -1,0 +1,109 @@
+<div ng-controller="Task202Controller as t202C">
+
+
+    <div class="row" style="margin-left: 150px;">
+
+        <div class="col">
+            <div id="ispTaskDragItem0" ng-drag="t202C.activateDrag" ng-drag-data="t202C.itemA" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="t202C.itemA['file'] !== ''" ng-src="{{t202C.itemA['file']}}" style="height: 150px; border: solid 1px grey;" ng-click="t202C.clickImage(t202C.itemA['audio'])"
+                     ng-class="{ 'highlight-letter': t202C.itemA['highlight'] }">
+            </div>
+        </div>
+        <div class="col">
+            <div id="ispTaskDragItem1" ng-drag="t202C.activateDrag" ng-drag-data="t202C.itemB" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="t202C.itemB['file'] !== ''" ng-src="{{t202C.itemB['file']}}" style="height: 150px; border: solid 1px grey;" ng-click="t202C.clickImage(t202C.itemB['audio'])"
+                     ng-class="{ 'highlight-letter': t202C.itemB['highlight'] }">
+            </div>
+        </div>
+        <div class="col"></div>
+
+    </div>
+
+    <div class="row" ng-if="!t202C.finished">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="row" style="position: relative;">
+        <img ng-src="{{'content/' + t202C.word + '/category/category.jpg'}}" style="position: absolute; width: 320px; height: 240px; top: 135px; left: 240px;" ng-click="t202C.clickMainImage()">
+
+        <div class="col">
+            <div class="row">
+                <div class="col">
+
+                    <div id="ispTaskDropzone0" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="t202C.onDropComplete(0, $data)">
+                        <div class="isp-dragged-item" id="ispTaskDroppedItem0">
+                            <img ng-src="{{t202C.droppedItems['0']['file']}}" style="position: relative; width: 240px; height: 180px; border: solid #FD7F36;" ng-click="t202C.clickImage(t202C.droppedItems['0']['audio'])">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="height: 100px;">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <div id="ispTaskDropzone1" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="t202C.onDropComplete(1, $data)">
+                        <div class="isp-dragged-item" id="ispTaskDroppedItem1">
+                            <img ng-src="{{t202C.droppedItems['1']['file']}}" style="position: relative; width: 240px; height: 180px; border: solid #FD7F36;" ng-click="t202C.clickImage(t202C.droppedItems['1']['audio'])">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col" style="height: 100px;"></div>
+            </div>
+            <div class="row">
+                <div class="col center">
+                  <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+
+                    <div id="ispTaskDropzone2" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="t202C.onDropComplete(2, $data)">
+                        <div class="isp-dragged-item" id="ispTaskDroppedItem2">
+                            <img ng-src="{{t202C.droppedItems['2']['file']}}" style="position: relative; width: 240px; height: 180px; border: solid #FD7F36;" ng-click="t202C.clickImage(t202C.droppedItems['2']['audio'])">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="height: 100px;">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <div id="ispTaskDropzone3" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="t202C.onDropComplete(3, $data)">
+                        <div class="isp-dragged-item" id="ispTaskDroppedItem3">
+                            <img ng-src="{{t202C.droppedItems['3']['file']}}" style="position: relative; width: 240px; height: 180px; border: solid #FD7F36;" ng-click="t202C.clickImage(t202C.droppedItems['3']['audio'])">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,30 @@
+<div ng-controller="Task305Controller as t305C" style="margin-left: 50px;">
+
+    <div class="row">
+        <div class="col col-25">
+            <div ng-click="t305C.captureAudio()" style="margin-top: 200px; width: 100px;">
+                <img src="content/common/images/record-start.png" ng-hide="t305C.recording" style="width: 100%;">
+                <img src="content/common/images/record-stop.png" ng-show="t305C.recording" style="width: 100%;">
+            </div>
+            <img src="content/common/images/play.png" ng-click="t305C.replayAudio()" ng-hide="t305C.recording" style="margin-top: 50px; width: 100px;">
+        </div>
+
+        <div class="col col-75">
+
+            <div class="row">
+                <div class="col">
+                    <img class="center" ng-src="{{t305C.parrotUrl}}" style="width: 400px; z-index: 10; position: fixed;">
+
+                    <img class="isp-task30X-transition center"
+                         style="position: absolute; top: 400px; left: 300px; z-index: 5; width: 275px; border: solid black;"
+                         ng-class="{'grow-letter': t305C.lightMainImage}"
+                         ng-src="{{::t305C.letterImageUrl}}"
+                         ng-style="t305C.growStyle"
+                         ng-click="t305C.clickLetter()">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div ng-controller="TaskC101Controller as C101C">
+
+    <div ng-if="C101C.page === 1">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col center">
+                <img ng-src="{{C101C.displayImages[C101C.displayImageIndex]}}" style="height: 400px;">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col center">
+                <img style="width: 300px;" ng-src="content/common/images/consolidation/task2.png" ng-click="C101C.pushBuzzerPage1()"
+                     ng-class="{ 'highlight-letter': C101C.highlightBuzzer }">
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-if="C101C.page === 2">
+        <div style="margin-top: 50px;"></div>
+        <div class="row" ng-repeat="r in [0,3]">
+            <div class="col center" ng-repeat="i in [0,1,2]">
+                <img ng-src="{{::C101C.displayImages[r+i]}}" style="width: 200px;" ng-click="C101C.clickItem(r+i)">
+            </div>
+        </div>
+        <hr>
+        <img ng-hide="C101C.attempts > 1" ng-src="content/common/images/consolidation/dontknow.png" ng-click="C101C.pushBuzzerPage2()"
+             style="width: 300px; position: absolute; bottom: 50px; left: 50px;"
+             ng-class="{ 'highlight-letter': C101C.highlightIdontknow }">
+        <img ng-src="content/common/images/consolidation/iknow.png" ng-click="C101C.pushAnswer()"
+             style="width: 300px; position: absolute; bottom: 50px; left: 500px;"
+             ng-class="{ 'highlight-letter': C101C.highlightIknow }">
+    </div>
+
+    <div ng-if="C101C.page === 3">
+        <div class="row">
+            <div class="col">
+                <img ng-hide="C101C.showAnswer" ng-src="content/common/images/questionmark.png" ng-click="C101C.showTheAnswer()" style="width: 100%;">
+                <img ng-show="C101C.showAnswer" ng-src="{{C101C.answerImage}}" style="width: 100%;">
+                <div isp-pointer isp-pointer-style="{'left' : '400px', 'top' : '400px'}" isp-timeout="3000" isp-hide-after="true"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

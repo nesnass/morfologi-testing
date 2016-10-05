@@ -1,0 +1,8 @@
+<div>
+    <video id="ispVideoElement" preload="auto" width="100%" vsrc="{{vpC.videoUrl}}" psrc="{{vpC.posterUrl}}" type="video/mp4" html5videofix
+            style="max-height: 600px;" webkit-playsinline>
+        Your browser does not support the video tag.
+    </video>
+    <img id="ispVideoPlayElement" ng-show="!vpC.playing && vpC.isolatedScope.ispActive['active'] && vpC.playImage !== ''" style="position: absolute; top: 0; left: 0;" width="100%" ng-click="vpC.playVideo()"
+         ng-src="{{'content/common/images/play_button_transparent_' + vpC.playImage + '.png'}}">
+</div>

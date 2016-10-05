@@ -1,0 +1,90 @@
+<div ng-controller="TaskC107Controller as C107C">
+
+
+    <div class="row" style="margin-left: 100px; margin-top: 50px;">
+
+        <div class="col">
+            <div id="ispTaskDragItem0" ng-drag="C107C.activateDrag" ng-drag-data="C107C.draggableItems['0']" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="C107C.draggableItems['0']['file'] !== ''" ng-src="{{C107C.draggableItems['0']['file']}}" style="height: 150px;" ng-click="C107C.clickImage(C107C.draggableItems['0']['audio'])"
+                     ng-class="{ 'highlight-letter': C107C.draggableItems['0']['highlight'] }" ng-style="{'transform' : 'rotate(' + C107C.draggableItems['0']['rotate'] + 'deg)'}">
+            </div>
+        </div>
+        <div class="col" style="margin-left: 100px;">
+            <div id="ispTaskDragItem1" ng-drag="C107C.activateDrag" ng-drag-data="C107C.draggableItems['1']" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="C107C.draggableItems['1']['file'] !== ''" ng-src="{{C107C.draggableItems['1']['file']}}" style="height: 150px;" ng-click="C107C.clickImage(C107C.draggableItems['1']['audio'])"
+                     ng-class="{ 'highlight-letter': C107C.draggableItems['1']['highlight'] }" ng-style="{'transform' : 'rotate(' + C107C.draggableItems['1']['rotate'] + 'deg)'}">
+            </div>
+        </div>
+        <div class="col"></div>
+
+    </div>
+
+    <div class="row"  style="margin-top: 100px; margin-left: 100px;">
+
+        <div class="col">
+            <div id="ispTaskDragItem2" ng-drag="C107C.activateDrag" ng-drag-data="C107C.draggableItems['2']" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="C107C.draggableItems['2']['file'] !== ''" ng-src="{{C107C.draggableItems['2']['file']}}" style="height: 150px;" ng-click="C107C.clickImage(C107C.draggableItems['2']['audio'])"
+                     ng-class="{ 'highlight-letter': C107C.draggableItems['2']['highlight'] }" ng-style="{'transform' : 'rotate(' + C107C.draggableItems['2']['rotate'] + 'deg)'}">
+            </div>
+        </div>
+        <div class="col" style="margin-left: 100px;">
+            <div id="ispTaskDragItem3" ng-drag="C107C.activateDrag" ng-drag-data="C107C.draggableItems['3']" data-allow-transform="true" style="position: relative; z-index: 100;">
+                <img ng-show="C107C.draggableItems['3']['file'] !== ''" ng-src="{{C107C.draggableItems['3']['file']}}" style="height: 150px;" ng-click="C107C.clickImage(C107C.draggableItems['3']['audio'])"
+                     ng-class="{ 'highlight-letter': C107C.draggableItems['3']['highlight'] }" ng-style="{'transform' : 'rotate(' + C107C.draggableItems['3']['rotate'] + 'deg)'}">
+            </div>
+        </div>
+        <div class="col"></div>
+
+    </div>
+
+
+    <div style="position: fixed; left: 100px;" ng-style="{ 'bottom' : C107C.chosen === 4 ? '300px' : '75px' }">
+        <div class="row" style="position: relative;">
+
+            <div class="col col-25" style="padding-left: 0; padding-right: 0;">
+
+                <div id="ispTaskDropzone0" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="C107C.onDropComplete(0, $data)">
+                    <div class="isp-dragged-item" id="ispTaskDroppedItem0">
+                        <img ng-src="{{C107C.droppedItems['0']['file']}}" style="position: relative; width: 180px; height: 135px; border: solid 3px orange;" ng-click="C107C.clickImage(C107C.droppedItems['0']['audio'])">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col col-25" style="padding-left: 0; padding-right: 0;">
+
+                <div id="ispTaskDropzone1" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="C107C.onDropComplete(1, $data)">
+                    <div class="isp-dragged-item" id="ispTaskDroppedItem1">
+                        <img ng-src="{{C107C.droppedItems['1']['file']}}" style="position: relative; width: 180px; height: 135px; border: solid 3px orange;" ng-click="C107C.clickImage(C107C.droppedItems['1']['audio'])">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col col-25" style="padding-left: 0; padding-right: 0;">
+
+                <div id="ispTaskDropzone2" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="C107C.onDropComplete(2, $data)">
+                    <div class="isp-dragged-item" id="ispTaskDroppedItem2">
+                        <img ng-src="{{C107C.droppedItems['2']['file']}}" style="position: relative; width: 180px; height: 135px; border: solid 3px orange;" ng-click="C107C.clickImage(C107C.droppedItems['2']['audio'])">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col col-25" style="padding-left: 0; padding-right: 0;">
+
+                <div id="ispTaskDropzone3" class="isp-task-drop-zone" ng-drop="true" ng-drop-success="C107C.onDropComplete(3, $data)">
+                    <div class="isp-dragged-item" id="ispTaskDroppedItem3">
+                        <img ng-src="{{C107C.droppedItems['3']['file']}}" style="position: relative; width: 180px; height: 135px; border: solid 3px orange;" ng-click="C107C.clickImage(C107C.droppedItems['3']['audio'])">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
