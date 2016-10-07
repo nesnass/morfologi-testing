@@ -1,6 +1,6 @@
 /// <reference path="../_references.ts"/>
 
-module ISPApp {
+module MorfologiApp {
 
     "use strict";
     import MomentDuration = moment.Duration;

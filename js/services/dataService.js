@@ -1,21 +1,21 @@
 /// <reference path="../_references"/>
 /// <reference path="../app.constants.ts"/>
 /// <reference path="../models/models"/>
-/// <reference path="./cordovaService"/>
 /// <reference path="./nettskjemaService"/>
-var ISPApp;
-(function (ISPApp) {
+/// <reference path="./cordovaService"/>
+var MorfologiApp;
+(function (MorfologiApp) {
     var Services;
     (function (Services) {
         "use strict";
         var DataService = (function () {
-            function DataService($http, $window, $timeout, cordovaService, nettsckjemaService, constants) {
+            function DataService($http, $window, $timeout, nettsckjemaService, cordovaService, constants) {
                 var _this = this;
                 this.$http = $http;
                 this.$window = $window;
                 this.$timeout = $timeout;
-                this.cordovaService = cordovaService;
                 this.nettsckjemaService = nettsckjemaService;
+                this.cordovaService = cordovaService;
                 this.constants = constants;
                 this.currentLanguage = "en";
                 this.username = '';
@@ -66,14 +66,6 @@ var ISPApp;
             };
             DataService.prototype.getDesktopBrowserTesting = function () {
                 return this.desktopBrowserTesting;
-            };
-            DataService.prototype.updateFreeDiskSpace = function () {
-                var _this = this;
-                this.cordovaService.getFreeDiskSpace(function (space) {
-                    _this.status.disk_space = Math.floor(parseInt(space) / 1048576);
-                }, function () {
-                    console.log('Error obtaining disk space');
-                });
             };
             // Takes the 'achievement' to the next day, but marks day as skipped.
             // The day to skip is considered as the avatar's current location
@@ -127,7 +119,7 @@ var ISPApp;
                 return this.$http.get(this.constants.constants[setupPathKey] + this.constants.constants[setupFilenameKey] +
                     this.constants.constants[setupRevisionKey] + '.json')
                     .then(function (res) {
-                    _this.setupModel = new ISPApp.Setup().deserialise(res.data);
+                    _this.setupModel = new MorfologiApp.Setup().deserialise(res.data);
                     if (successCallback !== null) {
                         successCallback(res.data);
                     }
@@ -145,7 +137,7 @@ var ISPApp;
                     }, function (error) {
                         // If there was a terminal error reading from the storage file, try to create a new one
                         if (typeof error !== 'undefined' && error !== null && error === 'create_new_storage') {
-                            _this.cordovaService.writeStorage(new ISPApp.Storage().initialise(_this.setupModel, _this.username), function () {
+                            _this.cordovaService.writeStorage(new MorfologiApp.Storage().initialise(_this.setupModel, _this.username), function () {
                                 console.log('Created fresh storage after read fail');
                                 _this.cordovaService.getStorage(function (model) {
                                     _this.storageModel = model;
@@ -176,7 +168,6 @@ var ISPApp;
                     newMode = this.constants.constants[formalNameKey];
                 }
                 console.log('Using storage: ' + newMode);
-                this.updateFreeDiskSpace();
                 // Called from a 'resume' and storage state has changed, or this is the first launch
                 if ((this.setupComplete && this.settings.storage_mode !== newMode) || !this.setupComplete) {
                     this.setupComplete = false;
@@ -206,10 +197,8 @@ var ISPApp;
             };
             // Save the current status to local tablet storage
             DataService.prototype.writeStorage = function (sFunc, eFunc, backup) {
-                var _this = this;
                 if (this.deviceReady) {
                     this.cordovaService.writeStorage(this.storageModel, function () {
-                        _this.updateFreeDiskSpace();
                         console.log('Saved to storage file');
                         if (sFunc !== null) {
                             sFunc();
@@ -623,10 +612,10 @@ var ISPApp;
             DataService.prototype.getAppVersion = function (callback) {
                 this.cordovaService.getAppVersion(callback);
             };
-            DataService.$inject = ['$http', '$window', '$timeout', 'CordovaService', 'NettskjemaService', 'ISPConstants'];
+            DataService.$inject = ['$http', '$window', '$timeout', 'CordovaService', 'NettskjemaService', 'MorfologiConstants'];
             return DataService;
         }());
         Services.DataService = DataService;
-    })(Services = ISPApp.Services || (ISPApp.Services = {}));
-})(ISPApp || (ISPApp = {}));
+    })(Services = MorfologiApp.Services || (MorfologiApp.Services = {}));
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=dataService.js.map

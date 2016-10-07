@@ -1,8 +1,5 @@
-/**
- * Created by richardnesnass on 24/06/16.
- */
 /// <reference path="../../_references.ts"/>
-/// <reference path="../../services/dataservice.ts"/>
+/// <reference path="../../services/dataService"/>
 /**
  * On click, plays a video
  * On end, activates the next task
@@ -10,8 +7,8 @@
  * Use this directive in the form:
  * <div isp-video-player></div>
  */
-var ISPApp;
-(function (ISPApp) {
+var MorfologiApp;
+(function (MorfologiApp) {
     var Directives;
     (function (Directives) {
         "use strict";
@@ -56,7 +53,7 @@ var ISPApp;
             };
             VideoPlayerController.$inject = ['$scope', '$sce'];
             return VideoPlayerController;
-        })();
+        }());
         function linker(isolatedScope, element, attributes, ctrl) {
             var c = element.children();
             ctrl.video = c[0];
@@ -102,6 +99,6 @@ var ISPApp;
             };
         }
         Directives.html5videofix = html5videofix;
-    })(Directives = ISPApp.Directives || (ISPApp.Directives = {}));
-})(ISPApp || (ISPApp = {}));
+    })(Directives = MorfologiApp.Directives || (MorfologiApp.Directives = {}));
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=videoplayer.js.map

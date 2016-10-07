@@ -1,9 +1,5 @@
-/**
- * Created by richardnesnass on 24/06/16.
- */
-
 /// <reference path="../../_references.ts"/>
-/// <reference path="../../services/dataservice.ts"/>
+/// <reference path="../../services/dataService"/>
 
 /**
  * On click, plays a video
@@ -12,7 +8,7 @@
  * Use this directive in the form:
  * <div isp-video-player></div>
  */
-module ISPApp.Directives {
+module MorfologiApp.Directives {
     import ISCEService = angular.ISCEService;
     "use strict";
 

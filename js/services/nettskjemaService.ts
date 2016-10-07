@@ -3,7 +3,7 @@
 /// <reference path="../models/models.ts"/>
 /// <reference path="./cordovaService"/>
 
-module ISPApp.Services {
+module MorfologiApp.Services {
     "use strict";
 
     export interface INettskjemaService {
@@ -12,7 +12,7 @@ module ISPApp.Services {
     }
 
     export class NettskjemaService implements INettskjemaService {
-        static $inject = ['$http', 'CordovaService', 'ISPConstants'];
+        static $inject = ['$http', 'CordovaService'];
 
         private token: string;
         private UUID: string;

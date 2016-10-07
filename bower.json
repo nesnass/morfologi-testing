@@ -1,15 +1,13 @@
 {
   "name": "morfologi",
   "private": "true",
-  "devDependencies": {
-    "angularjs": "^1.5.8",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
     "moment": "2.14.1",
     "ngDraggable": "0.1.10",
     "angular-translate": "~2.11.1",
     "angular-translate-loader-static-files": "~2.11.1",
     "angular-flippy": "2.0.5"
-  },
-  "dependencies": {
-    "angular-route": "^1.5.8"
   }
 }

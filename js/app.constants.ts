@@ -1,13 +1,13 @@
 /// <reference path='_references.ts'/>
 
-module ISPApp {
+module MorfologiApp {
     'use strict';
 
-    export interface IISPConstants {
+    export interface IMorfologiConstants {
         constants: {};
     }
 
-    export class ISPConstants {
+    export class MorfologiConstants {
         public static get constants() {
 
             // Release number should be updated accordingly on new app releases  e.g.  isp_setup_r1.json, isp_storage_r1_sample.json

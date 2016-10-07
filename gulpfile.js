@@ -19,14 +19,14 @@ var gulp = require('gulp'),
 
 var paths = {
   ts: ['./js/**/*.ts', './js/templates/**/*.ts'],
-  sass: ['./**/*.scss', './**/*.scss', './js/templates/**/*.scss']
+  sass: ['./js/**/*.scss', './scss/**/*.scss']
 };
 
 gulp.task('default', ['sass', 'typescripts', 'typedoc', 'backupLayoutFile']);
 gulp.task('watchsass', ['sass', 'watchsass']);
 gulp.task('watchreload', ['sass', 'browserSync', 'watch']);
 gulp.task('doc', ['typedoc']);
-gulp.task('dev', ['sass', 'typescripts', 'backupLayoutFile']);
+gulp.task('dev', ['sass', 'typescripts']);
 
 gulp.task('browserSync', function() {
   browserSync.init({

@@ -1,11 +1,11 @@
 /// <reference path="../_references"/>
 /// <reference path="../app.constants.ts"/>
 /// <reference path="../models/models"/>
-/// <reference path="./cordovaService"/>
 /// <reference path="./nettskjemaService"/>
+/// <reference path="./cordovaService"/>
 
 
-module ISPApp.Services {
+module MorfologiApp.Services {
     import Moment = moment.Moment;
     "use strict";
 
@@ -182,7 +182,7 @@ module ISPApp.Services {
     }
 
     export class DataService implements IDataService {
-        static $inject = ['$http', '$window', '$timeout', 'CordovaService', 'NettskjemaService', 'ISPConstants'];
+        static $inject = ['$http', '$window', '$timeout', 'CordovaService', 'NettskjemaService', 'MorfologiConstants'];
 
         private currentLanguage: string = "en";
         private username: string = '';
@@ -222,8 +222,7 @@ module ISPApp.Services {
         private deviceReady: boolean;
 
         constructor(private $http:ng.IHttpService, private $window: ng.IWindowService, private $timeout: ng.ITimeoutService,
-                    private cordovaService: ICordovaService, private nettsckjemaService: INettskjemaService,
-                    private constants: IISPConstants) {
+                    private nettsckjemaService: INettskjemaService, private cordovaService: ICordovaService, private constants: IMorfologiConstants) {
 
             this.deviceReady = false;
 
@@ -281,13 +280,6 @@ module ISPApp.Services {
             return this.desktopBrowserTesting;
         }
 
-        updateFreeDiskSpace() {
-            this.cordovaService.getFreeDiskSpace((space) => {
-                this.status.disk_space = Math.floor(parseInt(space) / 1048576);
-            }, () => {
-                console.log('Error obtaining disk space');
-            })
-        }
 
         // Takes the 'achievement' to the next day, but marks day as skipped.
         // The day to skip is considered as the avatar's current location
@@ -396,7 +388,6 @@ module ISPApp.Services {
             }
             console.log('Using storage: ' + newMode);
 
-            this.updateFreeDiskSpace();
 
             // Called from a 'resume' and storage state has changed, or this is the first launch
             if ((this.setupComplete && this.settings.storage_mode !== newMode) || !this.setupComplete) {
@@ -430,7 +421,6 @@ module ISPApp.Services {
         writeStorage(sFunc, eFunc, backup) {
             if (this.deviceReady) {
                 this.cordovaService.writeStorage(this.storageModel, () => {
-                    this.updateFreeDiskSpace();
                     console.log('Saved to storage file');
                     if (sFunc !== null) {
                         sFunc();

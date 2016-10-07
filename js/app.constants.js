@@ -1,11 +1,11 @@
 /// <reference path='_references.ts'/>
-var ISPApp;
-(function (ISPApp) {
+var MorfologiApp;
+(function (MorfologiApp) {
     'use strict';
-    var ISPConstants = (function () {
-        function ISPConstants() {
+    var MorfologiConstants = (function () {
+        function MorfologiConstants() {
         }
-        Object.defineProperty(ISPConstants, "constants", {
+        Object.defineProperty(MorfologiConstants, "constants", {
             get: function () {
                 // Release number should be updated accordingly on new app releases  e.g.  isp_setup_r1.json, isp_storage_r1_sample.json
                 return {
@@ -25,8 +25,8 @@ var ISPApp;
             configurable: true
         });
         ;
-        return ISPConstants;
+        return MorfologiConstants;
     }());
-    ISPApp.ISPConstants = ISPConstants;
-})(ISPApp || (ISPApp = {}));
+    MorfologiApp.MorfologiConstants = MorfologiConstants;
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=app.constants.js.map

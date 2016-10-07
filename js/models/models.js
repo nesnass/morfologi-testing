@@ -1,6 +1,6 @@
 /// <reference path="../_references.ts"/>
-var ISPApp;
-(function (ISPApp) {
+var MorfologiApp;
+(function (MorfologiApp) {
     "use strict";
     var Audio = (function () {
         function Audio() {
@@ -64,7 +64,7 @@ var ISPApp;
         }
         return Common;
     }());
-    ISPApp.Common = Common;
+    MorfologiApp.Common = Common;
     var Reward = (function () {
         function Reward(week, day, type) {
             this.type = type;
@@ -75,7 +75,7 @@ var ISPApp;
         }
         return Reward;
     }());
-    ISPApp.Reward = Reward;
+    MorfologiApp.Reward = Reward;
     var Achievement = (function () {
         // e.g. found in the form /common/images/rewards/week-<weekIndex>/<dayIndex>.gif
         function Achievement() {
@@ -135,7 +135,7 @@ var ISPApp;
         };
         return Achievement;
     }());
-    ISPApp.Achievement = Achievement;
+    MorfologiApp.Achievement = Achievement;
     var Overlay = (function () {
         function Overlay() {
             this.id = -1;
@@ -163,7 +163,7 @@ var ISPApp;
         };
         return Overlay;
     }());
-    ISPApp.Overlay = Overlay;
+    MorfologiApp.Overlay = Overlay;
     var Overlays = (function () {
         function Overlays() {
             this.display_delay = 0;
@@ -174,7 +174,7 @@ var ISPApp;
         }
         return Overlays;
     }());
-    ISPApp.Overlays = Overlays;
+    MorfologiApp.Overlays = Overlays;
     var Book = (function () {
         function Book() {
             this.reference = '';
@@ -192,7 +192,7 @@ var ISPApp;
         };
         return Book;
     }());
-    ISPApp.Book = Book;
+    MorfologiApp.Book = Book;
     var Task = (function () {
         function Task() {
             this.type = '100';
@@ -202,7 +202,7 @@ var ISPApp;
         }
         return Task;
     }());
-    ISPApp.Task = Task;
+    MorfologiApp.Task = Task;
     var Day = (function () {
         function Day() {
             this.completed = false;
@@ -217,7 +217,7 @@ var ISPApp;
         }
         return Week;
     }());
-    ISPApp.Week = Week;
+    MorfologiApp.Week = Week;
     var Setup = (function () {
         function Setup() {
             this.books = [];
@@ -379,7 +379,7 @@ var ISPApp;
         };
         return Setup;
     }());
-    ISPApp.Setup = Setup;
+    MorfologiApp.Setup = Setup;
     var UsagePostData = (function () {
         function UsagePostData(user, week_index, word_en, word_no, day_index, task_index, book_reference, completed_on, skipped, accessed, duration, audio_file, usage_record) {
             this.user = user;
@@ -430,7 +430,7 @@ var ISPApp;
         };
         return UsagePostData;
     }());
-    ISPApp.UsagePostData = UsagePostData;
+    MorfologiApp.UsagePostData = UsagePostData;
     var UsageStorage = (function () {
         function UsageStorage() {
             this.duration = 0;
@@ -447,7 +447,7 @@ var ISPApp;
         };
         return UsageStorage;
     }());
-    ISPApp.UsageStorage = UsageStorage;
+    MorfologiApp.UsageStorage = UsageStorage;
     var BookStorage = (function () {
         function BookStorage() {
             this.completed_on = null;
@@ -500,7 +500,7 @@ var ISPApp;
         };
         return WeekStorage;
     }());
-    ISPApp.WeekStorage = WeekStorage;
+    MorfologiApp.WeekStorage = WeekStorage;
     var Storage = (function () {
         function Storage() {
             this.weeks = [];
@@ -758,6 +758,6 @@ var ISPApp;
         };
         return Storage;
     }());
-    ISPApp.Storage = Storage;
-})(ISPApp || (ISPApp = {}));
+    MorfologiApp.Storage = Storage;
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=models.js.map

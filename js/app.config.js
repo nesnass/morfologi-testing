@@ -1,39 +1,27 @@
 /// <reference path="_references.ts"/>
-var ISPApp;
-(function (ISPApp) {
+var MorfologiApp;
+(function (MorfologiApp) {
     'use strict';
     /**
      * Application-wide overall configuration
      * @param $stateProvider  Used for ionic internal routing.g /reward
      * @param $urlRouterProvider  Used for defining default route.
      * @param $httpProvider  Used for registering an interceptor (TokenInterceptor).
-     * @param $ionicConfigProvider  Used for defining view transitions.
      */
-    function configApp($stateProvider, $urlRouterProvider, $httpProvider, $ionicConfigProvider, $controllerProvider, $sceDelegateProvider, $translateProvider) {
+    function configApp($stateProvider, $urlRouterProvider, $httpProvider, $controllerProvider, $sceDelegateProvider, $translateProvider) {
         //define routing
         $stateProvider
-            .state('tasks', {
-            url: '/tasks',
-            templateUrl: './js/views/workpanel/workpanel.html'
-        })
-            .state('reward', {
-            url: '/reward',
-            templateUrl: './js/views/rewardpanel/rewardpanel.html',
-        })
-            .state('book', {
-            url: '/book',
-            templateUrl: './js/views/picturebook/picturebook.html'
-        })
             .state('main', {
-            url: '/home/:week',
+            name: 'main',
+            url: '/main',
             templateUrl: './js/views/mainpanel/mainpanel.html'
+        })
+            .state('tasks', {
+            name: 'test',
+            url: '/test',
+            templateUrl: './js/views/testpanel/testpanel.html'
         });
-        //set default route
-        $urlRouterProvider.otherwise('/home/');
-        //we can decide to enable the transitions if the app still performs well
-        $ionicConfigProvider.views.transition('platform');
-        $ionicConfigProvider.views.maxCache(10);
-        $ionicConfigProvider.views.swipeBackEnabled(false);
+        $urlRouterProvider.otherwise('/main');
         $httpProvider.defaults.withCredentials = true;
         $sceDelegateProvider.resourceUrlWhitelist([
             'self',
@@ -65,8 +53,8 @@ var ISPApp;
         // Force to norwegian - remove if using multiple languages
         $translateProvider.preferredLanguage('nb');
     }
-    ISPApp.configApp = configApp;
-    configApp.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider", "$ionicConfigProvider",
+    MorfologiApp.configApp = configApp;
+    configApp.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider",
         "$controllerProvider", "$sceDelegateProvider", "$translateProvider"];
-})(ISPApp || (ISPApp = {}));
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=app.config.js.map
