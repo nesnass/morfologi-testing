@@ -20,6 +20,7 @@
     "normalize.css": "^4.x",
     "typedoc": "^0.3.x",
     "gulp-typedoc": "^2.x",
+    "sass-lint": "^1.9.1",
     "gulp-sass": "^2.1.1",
     "gulp-concat": "^2.6.0",
     "merge-stream": "^1.0.0",

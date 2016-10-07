@@ -2,8 +2,8 @@
 /// <reference path="../app.constants.ts"/>
 /// <reference path="../models/models.ts"/>
 /// <reference path="./cordovaService"/>
-var ISPApp;
-(function (ISPApp) {
+var MorfologiApp;
+(function (MorfologiApp) {
     var Services;
     (function (Services) {
         "use strict";
@@ -51,10 +51,10 @@ var ISPApp;
                     postItem(item, null);
                 }
             };
-            NettskjemaService.$inject = ['$http', 'CordovaService', 'ISPConstants'];
+            NettskjemaService.$inject = ['$http', 'CordovaService'];
             return NettskjemaService;
         }());
         Services.NettskjemaService = NettskjemaService;
-    })(Services = ISPApp.Services || (ISPApp.Services = {}));
-})(ISPApp || (ISPApp = {}));
+    })(Services = MorfologiApp.Services || (MorfologiApp.Services = {}));
+})(MorfologiApp || (MorfologiApp = {}));
 //# sourceMappingURL=nettskjemaService.js.map

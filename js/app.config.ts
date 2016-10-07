@@ -1,6 +1,6 @@
 /// <reference path="_references.ts"/>
 
-module ISPApp {
+module MorfologiApp {
     'use strict';
 
     /**
@@ -8,42 +8,27 @@ module ISPApp {
      * @param $stateProvider  Used for ionic internal routing.g /reward
      * @param $urlRouterProvider  Used for defining default route.
      * @param $httpProvider  Used for registering an interceptor (TokenInterceptor).
-     * @param $ionicConfigProvider  Used for defining view transitions.
      */
     export function configApp($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider,
-                              $httpProvider: ng.IHttpProvider, $ionicConfigProvider: ionic.utility.IonicConfigProvider,
-                              $controllerProvider: ng.IControllerProvider, $sceDelegateProvider: ng.ISCEDelegateProvider,
+                              $httpProvider: ng.IHttpProvider, $controllerProvider: ng.IControllerProvider,
+                              $sceDelegateProvider: ng.ISCEDelegateProvider,
                               $translateProvider: angular.translate.ITranslateProvider ) {
 
         //define routing
         $stateProvider
-            .state('tasks', {
-                url: '/tasks',
-                templateUrl: './js/views/workpanel/workpanel.html'
-            })
-            .state('reward', {
-                url: '/reward',
-                templateUrl: './js/views/rewardpanel/rewardpanel.html',
-            })
-            .state('book', {
-                url: '/book',
-                templateUrl: './js/views/picturebook/picturebook.html'
-            })
             .state('main', {
-                url: '/home/:week',
+                name: 'main',
+                url: '/main',
                 templateUrl: './js/views/mainpanel/mainpanel.html'
+            })
+            .state('tasks', {
+                name: 'test',
+                url: '/test',
+                templateUrl: './js/views/testpanel/testpanel.html'
             });
 
-        //set default route
-        $urlRouterProvider.otherwise('/home/');
-
-        //we can decide to enable the transitions if the app still performs well
-        $ionicConfigProvider.views.transition('platform');
-        $ionicConfigProvider.views.maxCache(10);
-        $ionicConfigProvider.views.swipeBackEnabled(false);
-
+        $urlRouterProvider.otherwise('/main');
         $httpProvider.defaults.withCredentials = true;
-
         $sceDelegateProvider.resourceUrlWhitelist([
             'self',
             'https://nettskjema.uio.no/**',
@@ -79,7 +64,7 @@ module ISPApp {
 
     }
 
-    configApp.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider", "$ionicConfigProvider",
+    configApp.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider",
             "$controllerProvider", "$sceDelegateProvider", "$translateProvider"];
 
 }

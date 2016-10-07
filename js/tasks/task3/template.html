@@ -1,0 +1,90 @@
+<div ng-controller="Task3Controller as t3C">
+
+    <div ng-if="t3C.page === 1" style="position: relative;">
+
+        <img style="position: absolute; top: -10px; left: -70px; width: 1150px;" src="content/common/images/consolidation/task5/kangaroobackground.jpg">
+
+        <div style="position: absolute; top: 250px; left: -50px; width: 400px;">
+            <img src="content/common/images/consolidation/task5/kangaroo-1.png" ng-click="t3C.clickKangaroo(1)"
+                 ng-class="{'bounce' : t3C.bounce && t3C.round === 0}" style="width: 100%;">
+        </div>
+        <div style="position: absolute; top: 380px; left: 250px; width: 300px;">
+            <img src="content/common/images/consolidation/task5/kangaroo-2.png" ng-click="t3C.clickKangaroo(2)"
+                 ng-class="{'bounce' : t3C.bounce && t3C.round === 1}" style="width: 100%;">
+        </div>
+        <div style="position: absolute; top: 300px; left: 450px; width: 250px;">
+            <img src="content/common/images/consolidation/task5/kangaroo-3.png" ng-click="t3C.clickKangaroo(3)"
+                 ng-class="{'bounce' : t3C.bounce && t3C.round === 2}" style="width: 100%;">
+        </div>
+
+
+        <div ng-if="t3C.activatePointer" isp-pointer isp-pointer-style="t3C.kangarooData[t3C.round]['pointer']" isp-timeout="3000" isp-hide-after="true"></div>
+
+    </div>
+
+
+    <div ng-if="t3C.page === 2">
+
+        <img ng-src="content/common/images/consolidation/task5/kangaroo-{{t3C.round}}.png"
+             ng-class="{'bounce' : t3C.bounce}"
+             style="position: absolute;" ng-style="t3C.kangarooData[t3C.round - 1]['body']">
+
+        <!-- Draggable Items -->
+        <div style="position: absolute; width: 400px; height: 800px; right: 0; top: 30px;">
+            <div style="position:relative; width: 100%; height: 100%;">
+                <div ng-repeat="item in t3C['draggableObjects' + t3C.round]" id="ispTaskDragItem{{$index}}" ng-drag="item['draggable']"
+                     restore-saved-css="true" ng-drag-data="item" data-allow-transform="false"
+                     ng-class="{'isp-garage-image-transition' : item['transition']}"
+                     ng-style="item['style']">
+                    <img style="width: 100%;" ng-click="t3C.clickImage(item['audio'])" ng-src="{{item['image']}}">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Drop Area -->
+        <div id="ispTaskDropzoneBox" class="isp-task-drop-zone-box" ng-drop="true" ng-drop-success="t3C.onDropComplete($data)"
+             style="position: absolute" ng-style="t3C.kangarooData[t3C.round - 1]['pouch']">
+
+            <!--div style="position: relative">
+                <div class="isp-dragged-item" ng-repeat="item in t3C.droppedObjects" id="ispTaskDroppedItem{{$index}}" style="position: absolute;">
+                    <img ng-src="{{item['image']}}" ng-style="item['style']">
+                </div>
+            </div-->
+
+        </div>
+
+
+    </div>
+
+    <div ng-if="t3C.page === 3">
+
+        <img style="position: absolute; top: -10px; left: -70px; width: 1150px;" src="content/common/images/consolidation/task5/kangaroobackground.jpg">
+
+        <div class="jump">
+
+            <div isp-zoomableimage
+                 isp-image-url="content/common/images/consolidation/task5/kangaroo-1.png"
+                 isp-on-completed="t3C.jumpOffPageThreeCompleted()"
+                 isp-data="t3C.kangarooData[0]['pageThreeData']">
+            </div>
+
+            <div isp-zoomableimage
+                 isp-image-url="content/common/images/consolidation/task5/kangaroo-2.png"
+                 isp-on-completed="t3C.jumpOffPageThreeCompleted()"
+                 isp-data="t3C.kangarooData[1]['pageThreeData']">
+            </div>
+
+            <div isp-zoomableimage
+                 isp-image-url="content/common/images/consolidation/task5/kangaroo-3.png"
+                 isp-on-completed="t3C.jumpOffPageThreeCompleted()"
+                 isp-data="t3C.kangarooData[2]['pageThreeData']">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>

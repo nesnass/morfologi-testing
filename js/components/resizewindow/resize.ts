@@ -1,8 +1,8 @@
 /// <reference path="../../_references.ts"/>
-/// <reference path="../../services/dataservice.ts"/>
+/// <reference path="../../services/dataService"/>
 
-module ISPApp {
-    import DataService = ISPApp.Services.DataService;
+module MorfologiApp.Directives {
+    import DataService = MorfologiApp.Services.DataService;
     import IWindowService = angular.IWindowService;
     "use strict";
 
@@ -17,8 +17,7 @@ module ISPApp {
         };
     }
 
-    function linker(scope: IISPFeatureDirectiveScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes,
-             ctrl: ResizeController) {
+    function linker(scope: IISPFeatureDirectiveScope, element: ng.IAugmentedJQuery, ctrl: ResizeController) {
         var w = angular.element(ctrl.$window);
         scope.getWindowDimensions = function () {
             return {
@@ -26,7 +25,7 @@ module ISPApp {
                 'VIEW_WIDTH': element.prop('offsetWidth')
             };
         };
-        scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
+        scope.$watch(scope.getWindowDimensions, function (newValue) {
             ctrl.dataService.setResizableDivSize(newValue);
         }, true);
 

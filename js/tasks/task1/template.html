@@ -1,0 +1,43 @@
+<div ng-controller="Task1Controller as t1C">
+
+
+    <div class="row" style="margin-top: 50px;">
+
+        <div class="col col-50 isp-fade" ng-style="{'opacity' : t1C.opacity }">
+
+            <div class="row">
+                <div class="col">
+                    <img class="center" ng-src="{{t1C.itemA['file']}}" style="height: 400px;" ng-click="t1C.clickItemA()"
+                         ng-class="{ 'isp-border-green': t1C.itemA['highlight'] && t1C.itemA['correct'] && !t1C.playingSequence,
+                                     'isp-border-red': t1C.itemA['highlight'] && !t1C.itemA['correct'] && !t1C.playingSequence,
+                                      'highlight-letter': t1C.itemA['highlight'] && t1C.playingSequence }">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img class="center" src="content/common/images/pathmenu1ear.png" style="height: 50px;" ng-click="t1C.clickEarA()">
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-50 isp-fade" ng-style="{'opacity' : t1C.opacity }">
+
+            <div class="row">
+                <div class="col">
+                    <img class="center" ng-src="{{t1C.itemB['file']}}" style="height: 400px;" ng-click="t1C.clickItemB()"
+                         ng-class="{ 'isp-border-green': t1C.itemB['highlight'] && t1C.itemB['correct'] && !t1C.playingSequence,
+                                    'isp-border-red': t1C.itemB['highlight'] && !t1C.itemB['correct'] && !t1C.playingSequence,
+                                    'highlight-letter': t1C.itemB['highlight'] && t1C.playingSequence }">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img class="center" src="content/common/images/pathmenu1ear.png" style="height: 50px;" ng-click="t1C.clickEarB()">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

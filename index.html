@@ -11,9 +11,9 @@
     <link href="css/main.min.css" rel="stylesheet">
 
     <!-- AngularJS -->
-    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <!-- Angular Route -->
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- Translation provider -->
     <script src="bower_components/angular-translate/angular-translate.min.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
@@ -27,8 +27,8 @@
     <script src="bower_components/angular-flippy/dist/js/angular-flippy.min.js"></script>
 
 </head>
-<body>
-<ng-view></ng-view>
+<body ng-app="MorfologiApp">
+    <div ui-view></div>
 </body>
 <script src="js/MorfApp.bundle.js"></script>
 
