@@ -1,0 +1,14 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a2f6fe4d-e62d-4216-8f83-86a063bfc183" name="Training" url="http://intermedia-prod02.uio.no/ispapp">
+        <fileTransfer host="intermedia-prod02.uio.no" port="22" rootFolder="/var/www/html/ispapp" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</application>
