@@ -94,11 +94,22 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#answeredcorrectly" class="tsd-kind-icon">answered<wbr>Correctly</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#attempts" class="tsd-kind-icon">attempts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#completed" class="tsd-kind-icon">completed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#play_introduction" class="tsd-kind-icon">play_<wbr>introduction</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#record_audio" class="tsd-kind-icon">record_<wbr>audio</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#structure" class="tsd-kind-icon">structure</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#duration" class="tsd-kind-icon">duration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#finished" class="tsd-kind-icon">finished</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#morf" class="tsd-kind-icon">morf</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#started" class="tsd-kind-icon">started</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#template" class="tsd-kind-icon">template</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#attempt" class="tsd-kind-icon">attempt</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#begin" class="tsd-kind-icon">begin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_models_models_.morfologiapp.task.html#complete" class="tsd-kind-icon">complete</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L286">models/models.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L35">models/models.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_models_models_.morfologiapp.task.html" class="tsd-signature-type">Task</a></h4>
@@ -127,59 +138,144 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="answeredcorrectly" class="tsd-anchor"></a>
+					<h3>answered<wbr>Correctly</h3>
+					<div class="tsd-signature tsd-kind-icon">answered<wbr>Correctly<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L35">models/models.ts:35</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="attempts" class="tsd-anchor"></a>
+					<h3>attempts</h3>
+					<div class="tsd-signature tsd-kind-icon">attempts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L34">models/models.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="completed" class="tsd-anchor"></a>
 					<h3>completed</h3>
 					<div class="tsd-signature tsd-kind-icon">completed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L284">models/models.ts:284</a></li>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L30">models/models.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="play_introduction" class="tsd-anchor"></a>
-					<h3>play_<wbr>introduction</h3>
-					<div class="tsd-signature tsd-kind-icon">play_<wbr>introduction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="duration" class="tsd-anchor"></a>
+					<h3>duration</h3>
+					<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L286">models/models.ts:286</a></li>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L33">models/models.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="record_audio" class="tsd-anchor"></a>
-					<h3>record_<wbr>audio</h3>
-					<div class="tsd-signature tsd-kind-icon">record_<wbr>audio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="finished" class="tsd-anchor"></a>
+					<h3>finished</h3>
+					<div class="tsd-signature tsd-kind-icon">finished<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L283">models/models.ts:283</a></li>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L32">models/models.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="structure" class="tsd-anchor"></a>
-					<h3>structure</h3>
-					<div class="tsd-signature tsd-kind-icon">structure<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="morf" class="tsd-anchor"></a>
+					<h3>morf</h3>
+					<div class="tsd-signature tsd-kind-icon">morf<span class="tsd-signature-symbol">:</span> <a href="_models_models_.morfologiapp.morf.html" class="tsd-signature-type">Morf</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L285">models/models.ts:285</a></li>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L28">models/models.ts:28</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="started" class="tsd-anchor"></a>
+					<h3>started</h3>
+					<div class="tsd-signature tsd-kind-icon">started<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L282">models/models.ts:282</a></li>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L31">models/models.ts:31</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="template" class="tsd-anchor"></a>
+					<h3>template</h3>
+					<div class="tsd-signature tsd-kind-icon">template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L29">models/models.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="attempt" class="tsd-anchor"></a>
+					<h3>attempt</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">attempt<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L49">models/models.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="begin" class="tsd-anchor"></a>
+					<h3>begin</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">begin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L45">models/models.ts:45</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="complete" class="tsd-anchor"></a>
+					<h3>complete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">complete<span class="tsd-signature-symbol">(</span>correctlyAnswered<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nesnass/morfologi/blob/master/js/models/models.ts#L53">models/models.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>correctlyAnswered: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -219,12 +315,6 @@
 						</ul>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_models_new_.html">"models/models-<wbr>new"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_cordovaservice_.html">"services/cordova<wbr>Service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="../modules/_services_dataservice_.html">"services/data<wbr>Service"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -246,6 +336,9 @@
 						<a href="../modules/_tasks_task5_controller_.html">"tasks/task5/controller"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_tasks_task6_controller_.html">"tasks/task6/controller"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_views_mainpanel_mainpanel_.html">"views/mainpanel/mainpanel"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -256,43 +349,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.achievement.html" class="tsd-kind-icon">Achievement</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.audio.html" class="tsd-kind-icon">Audio</a>
+						<a href="_models_models_.morfologiapp.avatar.html" class="tsd-kind-icon">Avatar</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.book.html" class="tsd-kind-icon">Book</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.bookstorage.html" class="tsd-kind-icon">Book<wbr>Storage</a>
+						<a href="_models_models_.morfologiapp.morf.html" class="tsd-kind-icon">Morf</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.common.html" class="tsd-kind-icon">Common</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.day.html" class="tsd-kind-icon">Day</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.daystorage.html" class="tsd-kind-icon">Day<wbr>Storage</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.image.html" class="tsd-kind-icon">Image</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.overlay.html" class="tsd-kind-icon">Overlay</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.overlays.html" class="tsd-kind-icon">Overlays</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.reward.html" class="tsd-kind-icon">Reward</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.setup.html" class="tsd-kind-icon">Setup</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.storage.html" class="tsd-kind-icon">Storage</a>
+						<a href="_models_models_.morfologiapp.session.html" class="tsd-kind-icon">Session</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -303,44 +366,50 @@
 								<a href="_models_models_.morfologiapp.task.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#answeredcorrectly" class="tsd-kind-icon">answered<wbr>Correctly</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#attempts" class="tsd-kind-icon">attempts</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_models_models_.morfologiapp.task.html#completed" class="tsd-kind-icon">completed</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_models_models_.morfologiapp.task.html#play_introduction" class="tsd-kind-icon">play_<wbr>introduction</a>
+								<a href="_models_models_.morfologiapp.task.html#duration" class="tsd-kind-icon">duration</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_models_models_.morfologiapp.task.html#record_audio" class="tsd-kind-icon">record_<wbr>audio</a>
+								<a href="_models_models_.morfologiapp.task.html#finished" class="tsd-kind-icon">finished</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_models_models_.morfologiapp.task.html#structure" class="tsd-kind-icon">structure</a>
+								<a href="_models_models_.morfologiapp.task.html#morf" class="tsd-kind-icon">morf</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_models_models_.morfologiapp.task.html#type" class="tsd-kind-icon">type</a>
+								<a href="_models_models_.morfologiapp.task.html#started" class="tsd-kind-icon">started</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#template" class="tsd-kind-icon">template</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#attempt" class="tsd-kind-icon">attempt</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#begin" class="tsd-kind-icon">begin</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_models_models_.morfologiapp.task.html#complete" class="tsd-kind-icon">complete</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.taskstorage.html" class="tsd-kind-icon">Task<wbr>Storage</a>
-					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.usagepostdata.html" class="tsd-kind-icon">Usage<wbr>Post<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.usagestorage.html" class="tsd-kind-icon">Usage<wbr>Storage</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_models_.morfologiapp.video.html" class="tsd-kind-icon">Video</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.week.html" class="tsd-kind-icon">Week</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_models_models_.morfologiapp.weekstorage.html" class="tsd-kind-icon">Week<wbr>Storage</a>
+						<a href="_models_models_.morfologiapp.user.html" class="tsd-kind-icon">User</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../interfaces/_models_models_.morfologiapp.serializable.html" class="tsd-kind-icon">Serializable</a>
+						<a href="../interfaces/_models_models_.morfologiapp.deserializable.html" class="tsd-kind-icon">De<wbr>Serializable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_models_models_.morfologiapp.sessiondata.html" class="tsd-kind-icon">Session<wbr>Data</a>
 					</li>
 				</ul>
 			</nav>

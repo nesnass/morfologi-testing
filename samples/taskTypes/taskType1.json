@@ -1,0 +1,31 @@
+{
+  "kind": "TaskType1",
+  "identifier": 0,
+  "morph": "",
+  "affix": "",
+  "stem": "",
+  "morphedStem": "",
+  "samplePage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image1": "",
+    "audio1": "",
+    "caption1Pre": "",
+    "caption1Post": "",
+    "image2": "",
+    "audio2": "",
+    "caption2Pre": "",
+    "caption2Post": ""
+  },
+  "challenge": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image1": "",
+    "audio1": "",
+    "image2": "",
+    "audio2": "",
+    "caption2": ""
+  }
+}

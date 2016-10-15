@@ -1,7 +1,7 @@
 /// <reference path="../../_references.ts"/>
 /// <reference path="../../services/dataService"/>
 
-module MorfologiApp.Directives {
+namespace MorfologiApp.Directives {
     import DataService = MorfologiApp.Services.DataService;
     import IWindowService = angular.IWindowService;
     "use strict";
@@ -12,24 +12,24 @@ module MorfologiApp.Directives {
     }
 
     class ResizeController {
-        static $inject: string[] = ['DataService', '$window'];
+        static $inject: string[] = ["DataService", "$window"];
         constructor(public dataService: DataService, public $window: IWindowService) {
         };
     }
 
     function linker(scope: IISPFeatureDirectiveScope, element: ng.IAugmentedJQuery, ctrl: ResizeController) {
-        var w = angular.element(ctrl.$window);
+        let w = angular.element(ctrl.$window);
         scope.getWindowDimensions = function () {
             return {
-                'VIEW_HEIGHT': element.prop('offsetHeight'),
-                'VIEW_WIDTH': element.prop('offsetWidth')
+                "VIEW_HEIGHT": element.prop("offsetHeight"),
+                "VIEW_WIDTH": element.prop("offsetWidth")
             };
         };
         scope.$watch(scope.getWindowDimensions, function (newValue) {
             ctrl.dataService.setResizableDivSize(newValue);
         }, true);
 
-        w.bind('resize', function () {
+        w.bind("resize", function () {
             scope.$apply();
         });
 
@@ -38,7 +38,7 @@ module MorfologiApp.Directives {
 
     export function ispResize(): ng.IDirective {
         return {
-            restrict: 'A',
+            restrict: "A",
             controller: ResizeController,
             link: linker
         };

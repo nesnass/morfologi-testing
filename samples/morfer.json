@@ -1,0 +1,200 @@
+{
+  "sets": [
+    {
+      "morph": "u",
+      "type": "affix",
+      "words": [
+        {
+          "stem": "ferdig",
+          "xform": "uferdig"
+        },
+        {
+          "stem": "venner",
+          "xform": "uvenner"
+        },
+        {
+          "stem": "befolket",
+          "xform": "ubefolket"
+        },
+        {
+          "stem": "bedt",
+          "xform": "ubedt"
+        },
+        {
+          "stem": "beskjeden",
+          "xform": "ubeskjeden"
+        },
+        {
+          "stem": "farlig",
+          "xform": "ufarlig"
+        },
+        {
+          "stem": "bundet",
+          "xform": "ubundet"
+        },
+        {
+          "stem": "forståelig",
+          "xform": "uforståelig"
+        },
+        {
+          "stem": "heldig",
+          "xform": "uheldig"
+        },
+        {
+          "stem": "hell",
+          "xform": "uhell"
+        },
+        {
+          "stem": "hyggelig",
+          "xform": "uhyggelig"
+        },
+        {
+          "stem": "klar",
+          "xform": "uklar"
+        },
+        {
+          "stem": "malt",
+          "xform": "umalt"
+        },
+        {
+          "stem": "nyttig",
+          "xform": "unyttig"
+        },
+        {
+          "stem": "redd",
+          "xform": "uredd"
+        },
+        {
+          "stem": "vanlig",
+          "xform": "uvanlig"
+        },
+        {
+          "stem": "tørst",
+          "xform": "utørst"
+        },
+        {
+          "stem": "født",
+          "xform": "ufødt"
+        },
+        {
+          "stem": "brukt",
+          "xform": "ubrukt"
+        },
+        {
+          "stem": "nøyaktig",
+          "xform": "unøyaktig"
+        },
+        {
+          "stem": "balanse",
+          "xform": "ubalanse"
+        },
+        {
+          "stem": "avgjort",
+          "xform": "uavgjort"
+        },
+        {
+          "stem": "orden",
+          "xform": "uorden"
+        },
+        {
+          "stem": "skikkelig",
+          "xform": "uskikkelig"
+        }
+      ]
+    },
+    {
+      "morph": "mis",
+      "type": "affix",
+      "words": [
+        {
+          "stem": "bruker",
+          "xform": "misbruker"
+        },
+        {
+          "stem": "farget",
+          "xform": "misfarget"
+        },
+        {
+          "stem": "forstår",
+          "xform": "misforstår"
+        },
+        {
+          "stem": "tenksom",
+          "xform": "mistenksom"
+        },
+        {
+          "stem": "like",
+          "xform": "mislike"
+        },
+        {
+          "stem": "lykkes",
+          "xform": "mislykkes"
+        },
+        {
+          "stem": "unner",
+          "xform": "misunner"
+        },
+        {
+          "stem": "oppfatte",
+          "xform": "misoppfatte"
+        },
+        {
+          "stem": "tanke",
+          "xform": "mistanke"
+        },
+        {
+          "stem": "unner",
+          "xform": "misunner"
+        },
+        {
+          "stem": "tilpasset",
+          "xform": "mistilpasset"
+        },
+        {
+          "stem": "klang",
+          "xform": "misklang"
+        },
+        {
+          "stem": "danne",
+          "xform": "misdanne"
+        },
+        {
+          "stem": "tillit",
+          "xform": "mistillit"
+        },
+        {
+          "stem": "tror",
+          "xform": "mistror"
+        },
+        {
+          "stem": "behag",
+          "xform": "misbehag"
+        },
+        {
+          "stem": "lede",
+          "xform": "mislede"
+        },
+        {
+          "stem": "lyd",
+          "xform": "mislyd"
+        },
+        {
+          "stem": "modig",
+          "xform": "mismodig"
+        },
+        {
+          "stem": "kreditt",
+          "xform": "miskreditt"
+        },
+        {
+          "stem": "fornøyd",
+          "xform": "misfornøyd"
+        },
+        {
+          "stem": "formet",
+          "xform": "misformet"
+        }
+      ]
+    }
+  ]
+}

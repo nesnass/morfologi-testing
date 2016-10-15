@@ -1,7 +1,7 @@
 /// <reference path="_references.ts"/>
 
-module MorfologiApp {
-    'use strict';
+namespace MorfologiApp {
+    "use strict";
 
     /**
      * Application-wide overall configuration
@@ -13,54 +13,52 @@ module MorfologiApp {
                               $httpProvider: ng.IHttpProvider, $controllerProvider: ng.IControllerProvider,
                               $sceDelegateProvider: ng.ISCEDelegateProvider,
                               $translateProvider: angular.translate.ITranslateProvider ) {
-
-        //define routing
         $stateProvider
-            .state('main', {
-                name: 'main',
-                url: '/main',
-                templateUrl: './js/views/mainpanel/mainpanel.html'
+            .state("main", {
+                name: "main",
+                url: "/main",
+                templateUrl: "./js/views/mainpanel/mainpanel.html"
             })
-            .state('tasks', {
-                name: 'test',
-                url: '/test',
-                templateUrl: './js/views/testpanel/testpanel.html'
+            .state("tasks", {
+                name: "test",
+                url: "/test",
+                templateUrl: "./js/views/testpanel/testpanel.html"
             });
 
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise("/main");
         $httpProvider.defaults.withCredentials = true;
         $sceDelegateProvider.resourceUrlWhitelist([
-            'self',
-            'https://nettskjema.uio.no/**',
-            'cdvfile://localhost/documents/**',
-            'file:///var/**'
+            "self",
+            "https://nettskjema.uio.no/**",
+            "cdvfile://localhost/documents/**",
+            "file:///var/**"
         ]);
 
 
         // Translation
-        $translateProvider.useSanitizeValueStrategy('escaped');
+        $translateProvider.useSanitizeValueStrategy("escaped");
         $translateProvider.useStaticFilesLoader({
-            prefix: './languages/',
-            suffix: '.json'
+            prefix: "./languages/",
+            suffix: ".json"
         });
 
-        var lang = null;
-        if (navigator['languages']) {
-            lang = navigator['languages'][0];
+        let lang = null;
+        if (navigator["languages"]) {
+            lang = navigator["languages"][0];
         } else {
             lang = navigator.language || navigator.userLanguage;
         }
 
-        if (lang.indexOf('nn') > -1 || lang.indexOf('nb') > -1) {
-            $translateProvider.preferredLanguage('nb');
-            sessionStorage['lang'] = 'nb';
+        if (lang.indexOf("nn") > -1 || lang.indexOf("nb") > -1) {
+            $translateProvider.preferredLanguage("nb");
+            sessionStorage["lang"] = "nb";
         } else {
-            $translateProvider.preferredLanguage('en');
-            sessionStorage['lang'] = 'en';
+            $translateProvider.preferredLanguage("en");
+            sessionStorage["lang"] = "en";
         }
 
         // Force to norwegian - remove if using multiple languages
-        $translateProvider.preferredLanguage('nb');
+        $translateProvider.preferredLanguage("nb");
 
     }
 

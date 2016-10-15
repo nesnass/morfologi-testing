@@ -10,6 +10,8 @@
   "dependencies": {
   },
   "devDependencies": {
+    "mongoose": "^4.6.x",
+    "promise": "^7.1.x",
     "require-dir": "^0.3.0",
     "browser-sync": "^2.9.11",
     "gulp": "^3.9.0",

@@ -20,23 +20,23 @@ var MorfologiApp;
                 this.posterUrl = "";
                 this.videoUrl = "";
                 this.playing = false;
-                this.playImage = '1';
+                this.playImage = "1";
                 this.videoUrl = this.$sce.getTrustedResourceUrl(this.isolatedScope.ispVideoUrl);
                 this.posterUrl = this.isolatedScope.ispPosterUrl;
-                if (typeof this.isolatedScope.ispType !== 'undefined' && this.isolatedScope.ispType != null) {
-                    if (this.isolatedScope.ispType === 'task8') {
-                        this.playImage = '2';
+                if (typeof this.isolatedScope.ispType !== "undefined" && this.isolatedScope.ispType != null) {
+                    if (this.isolatedScope.ispType === "task8") {
+                        this.playImage = "2";
                     }
-                    else if (this.isolatedScope.ispType === 'none') {
-                        this.playImage = '';
+                    else if (this.isolatedScope.ispType === "none") {
+                        this.playImage = "";
                     }
                     else {
-                        this.playImage = '1';
+                        this.playImage = "1";
                     }
                 }
-                isolatedScope.$watch(function () { return isolatedScope.ispActive['playing']; }, function (newValue) {
+                isolatedScope.$watch(function () { return isolatedScope.ispActive["playing"]; }, function (newValue) {
                     if (newValue === true) {
-                        if (isolatedScope.ispActive['playing'] === true) {
+                        if (isolatedScope.ispActive["playing"] === true) {
                             _this.playVideo();
                         }
                     }
@@ -44,57 +44,57 @@ var MorfologiApp;
             }
             ;
             VideoPlayerController.prototype.playVideo = function () {
-                if (this.isolatedScope.ispActive['active']) {
+                if (this.isolatedScope.ispActive["active"]) {
                     this.playing = true;
                     this.video.load();
                     this.video.play();
                     this.isolatedScope.ispOnPlay();
                 }
             };
-            VideoPlayerController.$inject = ['$scope', '$sce'];
+            VideoPlayerController.$inject = ["$scope", "$sce"];
             return VideoPlayerController;
         }());
         function linker(isolatedScope, element, attributes, ctrl) {
             var c = element.children();
             ctrl.video = c[0];
             ctrl.video.autoplay = false;
-            ctrl.video.addEventListener('ended', function () {
+            ctrl.video.addEventListener("ended", function () {
                 ctrl.playing = false;
-                isolatedScope.ispActive['playing'] = false;
+                isolatedScope.ispActive["playing"] = false;
                 isolatedScope.ispOnCompleted();
                 isolatedScope.$digest();
             });
         }
-        //directive declaration
+        // directive declaration
         function ispVideoPlayer() {
             return {
-                restrict: 'A',
+                restrict: "A",
                 controller: VideoPlayerController,
-                controllerAs: 'vpC',
+                controllerAs: "vpC",
                 replace: true,
-                templateUrl: 'js/components/videoplayer/videoplayer.html',
+                templateUrl: "js/components/videoplayer/videoplayer.html",
                 scope: {
-                    ispVideoUrl: '@',
-                    ispPosterUrl: '@',
-                    ispOnCompleted: '&',
-                    ispActive: '=',
-                    ispOnPlay: '&',
-                    ispType: '@'
+                    ispVideoUrl: "@",
+                    ispPosterUrl: "@",
+                    ispOnCompleted: "&",
+                    ispActive: "=",
+                    ispOnPlay: "&",
+                    ispType: "@"
                 },
                 link: linker
             };
         }
         Directives.ispVideoPlayer = ispVideoPlayer;
-        //Html5 video fix
+        // Html5 video fix
         function html5videofix() {
             return {
-                restrict: 'A',
+                restrict: "A",
                 link: function (isolatedScope, element, attr) {
-                    attr.$set('src', attr['vsrc']);
-                    attr.$set('poster', attr['psrc']);
-                    attr.$set('autoplay', false);
-                    attr.$set('webkit-playsinline', '');
-                    attr.$set('playsinline', '');
+                    attr.$set("src", attr["vsrc"]);
+                    attr.$set("poster", attr["psrc"]);
+                    attr.$set("autoplay", false);
+                    attr.$set("webkit-playsinline", "");
+                    attr.$set("playsinline", "");
                 }
             };
         }

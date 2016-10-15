@@ -1,0 +1,22 @@
+{
+  "userId1": {
+    "name" : "Test user 1",
+    "sessionId": "sessionId1"
+  },
+  "userId2": {
+    "name" : "Test user 2",
+    "sessionId": "sessionId1"
+  },
+  "userId3": {
+    "name" : "Test user 3",
+    "sessionId": "sessionId1"
+  },
+  "userId4": {
+    "name" : "Test user 4",
+    "sessionId": "sessionId2"
+  },
+  "userId5": {
+    "name" : "Test user 5",
+    "sessionId": "sessionId2"
+  }
+}
