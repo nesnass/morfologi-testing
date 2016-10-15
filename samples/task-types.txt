@@ -1,0 +1,56 @@
+
+"affix" can be "prefix" or "suffix"
+
+SAMPLES
+
+
+Type 1
+
+{
+  "kind": "TaskType1",
+  "morphemes": {
+    "morph": "mis",
+    "affix": "prefix",
+    "stem":  "bruker",
+    "xform": "misbruker",
+    "samplePage": {
+          "instruction": "",
+          "image1": "",
+          "audio1": "",
+          "image2": "",
+          "audio2": ""
+    },
+    "sample": {
+              "instruction": "",
+              "image1": "",
+              "audio1": "",
+              "image2": "",
+              "audio2": ""
+        }
+  }
+}
+
+
+
+
+
+
+
+"taskType2": {
+    "morph" : {
+      "stem": "",
+      "xform": ""
+    },
+    "page1": {
+      "instruction": "",
+      "image1": "",
+      "audio1": "",
+      "image2": "",
+      "audio2": "",
+      "image3": "",
+      "audio3": "",
+      "image4": "",
+      "audio4": ""
+    }
+  }
+}

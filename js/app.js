@@ -10,18 +10,18 @@
  */
 var MorfologiApp;
 (function (MorfologiApp) {
-    'use strict';
+    "use strict";
     /**
      * Array of dependencies to be injected in the application "dependencies".
      */
     var dependencies = [
-        'ui.router',
-        'pascalprecht.translate',
-        'ngDraggable',
-        'angular-flippy'
+        "ui.router",
+        "pascalprecht.translate",
+        "ngDraggable",
+        "angular-flippy"
     ];
-    angular.module('MorfologiApp', dependencies)
-        .constant('MorfologiConstants', MorfologiApp.MorfologiConstants)
+    angular.module("MorfologiApp", dependencies)
+        .constant("MorfologiConstants", MorfologiApp.MorfologiConstants)
         .service(MorfologiApp.Services)
         .directive(MorfologiApp.Directives)
         .controller(MorfologiApp.Controllers)

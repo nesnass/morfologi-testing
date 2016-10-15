@@ -1,0 +1,68 @@
+I'm working on a data structure that will hold details about morfs, sessions/tasks, tracking and general user information.
+This will evolve over time, but the general need is to support the presentation of each task with data the way you have described it to us.
+
+Some questions:
+---------------
+* Are some morfs / words inappropriate to use in some task types?
+  Alternatively stated, which if any of the tasks are generic enough to support all the 'morfs' you want to display?
+    - it is likely we must keep a record of which tasks can be used with which 'morf' + supporting media
+
+* Will a user always receive a word they have never seen before?
+    - in tasks across a session?
+    - and sessions across weeks?
+    If yes then we must keep a record in the user's account of which words they have already seen
+
+
+PILOT
+-----
+
+->  Each user will be given an ID to connect with.
+
+->  Two groups
+
+    Group 1:
+        24 'mis' morphs  (= 24 total tasks) taken from any of the task types
+        4  'u'   morphs  (= 24 total tasks taken from all 6 of the task types per morph)
+
+
+    Group 2:
+        24 'u'   morphs  (= 24 total tasks) taken from any of the task types
+        4  'mis' morphs  (= 24 total tasks taken from all 6 of the task types per morph)
+
+
+->  Track the items listed below to our own DB
+
+->  Run on a single platform to begin with (PC browser)
+
+->  Account for button sizes & screen adjustment for tablet if possible!
+
+
+
+Task & Session Tracking
+-----------------------
+Also, here is the translation of the tracking requirements as I understand them, including both øvingsøktene and testøktene in one set.
+Please comment if I have misundersood!
+
+
+ID Number (the user identifier)
+Start and end time for the session (date & time)
+Number of attempts to complete task
+    - how to measure this with 'drag and drop multiple items' type task?
+Number of attempts / total possible attempts
+    - how do we rate the total possible attempts?
+ ( Time used on each task (duration) (take from Session start / end time) )   **Calculable**
+ ( Time used on session (duration) (take from Session start / end time) )     **Calculable**
+Number of inactive periods over 30s
+Duration of inactive periods over 30s                                         **Calculable**
+Correct or incorrect answer (in case of 'unforgiving' session)
+
+
+
+
+
+Break down of Task structure
+----------------------------
+
+Task1
+
+

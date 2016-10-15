@@ -22,7 +22,7 @@ var paths = {
   sass: ['./js/**/*.scss', './scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'typescripts', 'typedoc', 'backupLayoutFile']);
+gulp.task('default', ['sass', 'typescripts', 'typedoc', 'backupLayoutFiles']);
 gulp.task('watchsass', ['sass', 'watchsass']);
 gulp.task('watchreload', ['sass', 'browserSync', 'watch']);
 gulp.task('doc', ['typedoc']);
@@ -37,9 +37,9 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('backupLayoutFile', function() {
+gulp.task('backupLayoutFiles', function() {
     return gulp
-        .src(['content/isp_setup_r1.json', 'content/isp_setup_training_r1.json'])
+        .src(['content/morfer.json', 'content/sessions.json', 'content/users.json'])
         .pipe(rename(function (path) {
             path.basename += '-backup';
         }))

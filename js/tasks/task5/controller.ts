@@ -2,14 +2,14 @@
 /// <reference path="../../models/models"/>
 /// <reference path="../../services/dataService"/>
 
-module MorfologiApp.Controllers {
+namespace MorfologiApp.Controllers {
     "use strict";
     import IScope = angular.IScope;
     import ITimeoutService = angular.ITimeoutService;
     import IDataService = MorfologiApp.Services.DataService;
 
     export class Task5Controller {
-        static $inject = ['$scope', '$timeout', 'DataService'];
+        static $inject = ["$scope", "$timeout", "DataService"];
 
         private word: string;
         private dayWord: string;
@@ -31,12 +31,10 @@ module MorfologiApp.Controllers {
         private opacity: number;
 
         constructor(private $scope: IScope, private $timeout: ITimeoutService, private dataService: IDataService) {
-            this.word = dataService.getWord();
-            this.dayWord = dataService.getWordForConsolidationDay();
-            this.dayIndex = dataService.getDay();
+
             this.page = 1;
             this.round = 0;
-            this.familyCharacter = '';
+            this.familyCharacter = "";
             this.droppedObjects = [];
             this.draggableObjects1 = [];
             this.draggableObjects2 = [];
@@ -96,19 +94,19 @@ module MorfologiApp.Controllers {
                 "type": "png"
             };
 
-            var correctToShuffle = [];
-            var incorrectToShuffle = [];
+            let correctToShuffle = [];
+            let incorrectToShuffle = [];
 
-            for (var i = 1; i < 25; i++) {
-                var item = {
-                    image: 'content/' + this.word + '/' + this.dayWord + '/correct/' + i + '.jpg',
-                    audio: 'content/' + this.word + '/' + this.dayWord + '/correct/' + i + '.mp3',
+            for (let i = 1; i < 25; i++) {
+                let item = {
+                    image: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".jpg",
+                    audio: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".mp3",
                     correct: true,
                     style: {
-                        'top': 0,
-                        'left': 0,
-                        'width': 0,
-                        'height': 0
+                        "top": 0,
+                        "left": 0,
+                        "width": 0,
+                        "height": 0
                     },
                     highlighted: false,
                     draggable: true,
@@ -118,16 +116,16 @@ module MorfologiApp.Controllers {
                 correctToShuffle.push(item);
             }
 
-            for (var i = 1; i < 7; i++) {
-                var item = {
-                    image: 'content/' + this.word + '/' + this.dayWord + '/incorrect/' + i + '.jpg',
-                    audio: 'content/' + this.word + '/' + this.dayWord + '/incorrect/' + i + '.mp3',
+            for (let i = 1; i < 7; i++) {
+                let item = {
+                    image: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".jpg",
+                    audio: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".mp3",
                     correct: false,
                     style: {
-                        'top': 0,
-                        'left': 0,
-                        'width': 0,
-                        'height': 0
+                        "top": 0,
+                        "left": 0,
+                        "width": 0,
+                        "height": 0
                     },
                     highlighted: false,
                     draggable: true,
@@ -137,8 +135,8 @@ module MorfologiApp.Controllers {
                 incorrectToShuffle.push(item);
             }
 
-            var correctShuffled = dataService.shuffleArray(correctToShuffle);
-            var incorrectShuffled = dataService.shuffleArray(incorrectToShuffle);
+            let correctShuffled = dataService.shuffleArray(correctToShuffle);
+            let incorrectShuffled = dataService.shuffleArray(incorrectToShuffle);
 
             this.draggableObjects1 = dataService.shuffleArray(correctShuffled.splice(0, 8).concat(incorrectShuffled.splice(0, 2)));
             this.draggableObjects2 = dataService.shuffleArray(correctShuffled.splice(0, 8).concat(incorrectShuffled.splice(0, 2)));
@@ -146,30 +144,31 @@ module MorfologiApp.Controllers {
 
             this.dataService.setInteractionEndActivateTaskCallback(() => {
                 this.dataService.clearInteractionEndActivateTaskCallback();
-                this.dataService.setupAudioIntroduction('content/common/audio/consolidation/task3/instruction.mp3');
+                this.dataService.setupAudioIntroduction("content/common/audio/consolidation/task3/instruction.mp3");
                 this.dataService.playAudioIntroduction(1000);
             });
-            this.dataService.setupAudioIntroduction('content/common/audio/consolidation/task3/van-stopping.mp3');
+            this.dataService.setupAudioIntroduction("content/common/audio/consolidation/task3/van-stopping.mp3");
             this.dataService.playAudioIntroduction(1000);
         }
 
+        /*
 
         introduction() {
-            var audioFile = '';
+            let audioFile = "";
             this.round++;
 
             this.setupImages();
 
             this.$timeout(() => {
                 if (this.round === 1) {
-                    this.familyCharacter = 'mother.png';
-                    audioFile = 'content/' + this.word + '/task3/' + this.dayWord + '/mother.mp3';
+                    this.familyCharacter = "mother.png";
+                    audioFile = "content/" + this.word + "/task3/" + this.dayWord + "/mother.mp3";
                 } else if (this.round === 2) {
-                    this.familyCharacter = 'father.png';
-                    audioFile = 'content/' + this.word + '/task3/' + this.dayWord + '/father.mp3';
+                    this.familyCharacter = "father.png";
+                    audioFile = "content/" + this.word + "/task3/" + this.dayWord + "/father.mp3";
                 } else {
-                    this.familyCharacter = 'daughter.png';
-                    audioFile = 'content/' + this.word + '/task3/' + this.dayWord + '/daughter.mp3';
+                    this.familyCharacter = "daughter.png";
+                    audioFile = "content/" + this.word + "/task3/" + this.dayWord + "/daughter.mp3";
                 }
                 this.dataService.setupAudioIntroduction(audioFile);
             }, 1000);
@@ -186,53 +185,53 @@ module MorfologiApp.Controllers {
         }
 
         setupImages() {
-            var vGap = 10, hGap = 10;
+            let vGap = 10, hGap = 10;
 
-            for (var n = 1; n < 4 ; n++) {
-                var list = this['draggableObjects' + n];
+            for (let n = 1; n < 4 ; n++) {
+                let list = this["draggableObjects" + n];
 
-                    for (var position = 0; position < list.length; position++) {
+                    for (let position = 0; position < list.length; position++) {
 
                         // Prepare the images for popping up from their center points
-                        list[position]['style'] = {
-                            'position': 'absolute',
-                            'top': (this.iHeight + vGap) * Math.floor(position / 5) + Math.floor(this.iHeight / 2) + 'px',
-                            'left': (this.iWidth + hGap) * (position % 5) + Math.floor(this.iWidth / 2) + 'px',
-                            'width': '0',
-                            'height': '0'
+                        list[position]["style"] = {
+                            "position": "absolute",
+                            "top": (this.iHeight + vGap) * Math.floor(position / 5) + Math.floor(this.iHeight / 2) + "px",
+                            "left": (this.iWidth + hGap) * (position % 5) + Math.floor(this.iWidth / 2) + "px",
+                            "width": "0",
+                            "height": "0"
                         };
                 }
             }
         }
 
-        enlargeImages() {     // After a timeout to allow digest of the previous style, set the style to 'enlarge' the images
-            var vGap = 10, hGap = 10;
-            var items = this['draggableObjects' + this.round];
-            for (var position = 0; position < items.length; position++) {
-                items[position]['style'] = {
-                    'position': 'absolute',
-                    'top': (this.iHeight + vGap) * Math.floor(position / 5) + 'px',
-                    'left': (this.iWidth + hGap) * (position % 5) + 'px',
-                    'width': this.iWidth + 'px',
-                    'height': this.iHeight + 'px'
+        enlargeImages() {     // After a timeout to allow digest of the previous style, set the style to "enlarge" the images
+            let vGap = 10, hGap = 10;
+            let items = this["draggableObjects" + this.round];
+            for (let position = 0; position < items.length; position++) {
+                items[position]["style"] = {
+                    "position": "absolute",
+                    "top": (this.iHeight + vGap) * Math.floor(position / 5) + "px",
+                    "left": (this.iWidth + hGap) * (position % 5) + "px",
+                    "width": this.iWidth + "px",
+                    "height": this.iHeight + "px"
                 };
             }
             this.$timeout(() => {
-                for (var position = 0; position < items.length; position++) {
-                    items[position]['transition'] = false;      // Transition effects dragging, so turn it off now
+                for (let position = 0; position < items.length; position++) {
+                    items[position]["transition"] = false;      // Transition effects dragging, so turn it off now
                 }
             }, 1000);
         }
 
         driveOnPageOneCompleted() {
-            this.$scope['wpC'].setAndShowOnetimeInternalForwardArrowCallback( () => {
+            this.$scope["wpC"].setAndShowOnetimeInternalForwardArrowCallback( () => {
                 this.page = 2;
                 this.introduction();
-            })
+            });
         }
 
         driveOffPageThreeCompleted() {
-            this.$scope['wpC'].taskFinished();
+            this.$scope["wpC"].taskFinished();
         }
 
         static clickImage(filename) {
@@ -242,29 +241,29 @@ module MorfologiApp.Controllers {
         closeVan() {
             this.$timeout(() => {
                 this.vanIsClosed = true;
-                new Audio('content/common/audio/consolidation/task3/van-door.mp3').play();
+                new Audio("content/common/audio/consolidation/task3/van-door.mp3").play();
                 this.$timeout(() => {
                     this.page = 3;
-                    new Audio('content/common/audio/consolidation/task3/van-driving.mp3').play();
-                }, 500)
+                    new Audio("content/common/audio/consolidation/task3/van-driving.mp3").play();
+                }, 500);
             }, 1500);
         }
 
         onDropComplete = function(item: {}) {
-            new Audio(item['audio']).play();
-            if (item['correct']) {
-                var iWidth = 80, iHeight = 60, leftOffset = 90, topOffset = 122, shiftFactor = 1.5;
+            new Audio(item["audio"]).play();
+            if (item["correct"]) {
+                let iWidth = 80, iHeight = 60, leftOffset = 90, topOffset = 122, shiftFactor = 1.5;
                 this.droppedObjects.push(item);
-                var itemIndex = this['draggableObjects' + this.round].indexOf(item);
-                this['draggableObjects' + this.round].splice(itemIndex, 1);
-                var i = this.droppedObjects.length - 1;
-                item['style'] = {
-                    'position' : 'absolute',
-                    'top' : topOffset + i * shiftFactor + 'px',
-                    'left' : leftOffset - i * shiftFactor + 'px',
-                    'width' : iWidth + (2 * i * shiftFactor) + 'px',
-                    'height' : iHeight + (2 * i * shiftFactor) + 'px',
-                    'transform': 'none'
+                let itemIndex = this["draggableObjects" + this.round].indexOf(item);
+                this["draggableObjects" + this.round].splice(itemIndex, 1);
+                let i = this.droppedObjects.length - 1;
+                item["style"] = {
+                    "position" : "absolute",
+                    "top" : topOffset + i * shiftFactor + "px",
+                    "left" : leftOffset - i * shiftFactor + "px",
+                    "width" : iWidth + (2 * i * shiftFactor) + "px",
+                    "height" : iHeight + (2 * i * shiftFactor) + "px",
+                    "transform": "none"
                 };
                 if (this.droppedObjects.length === 24) {
                     this.opacity = 0;
@@ -276,6 +275,8 @@ module MorfologiApp.Controllers {
             }
 
         };
+
+        */
 
     }
 }

@@ -1,0 +1,23 @@
+{
+  "kind": "TaskType5",
+  "identifier": 0,
+  "morph": "",
+  "affix": "",
+  "stem": "",
+  "morphedStem": "",
+  "firstPage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "boxImage0": "",
+    "boxImage1": "",
+    "words": [
+      { "image": "", "correctBox": 0, "audio": "" },
+      { "image": "", "correctBox": 0, "audio": "" },
+      { "image": "", "correctBox": 0, "audio": "" },
+      { "image": "", "correctBox": 0, "audio": "" },
+      { "image": "", "correctBox": 0, "audio": "" },
+      { "image": "", "correctBox": 0, "audio": "" }
+    ]
+  }
+}

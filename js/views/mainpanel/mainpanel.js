@@ -16,7 +16,10 @@ var MorfologiApp;
             MainPanelController.prototype.initialise = function () {
                 // this.language = this.dataService.getLanguage();
             };
-            MainPanelController.$inject = ['$http', '$location', '$scope'];
+            MainPanelController.prototype.selectTask = function (taskType) {
+                this.taskTemplateUrl = "js/tasks/task" + taskType + "/template.html";
+            };
+            MainPanelController.$inject = ["$http", "$location", "$scope"];
             return MainPanelController;
         }());
         Controllers.MainPanelController = MainPanelController;

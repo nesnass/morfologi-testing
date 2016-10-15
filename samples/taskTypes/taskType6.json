@@ -1,0 +1,22 @@
+{
+  "kind": "TaskType6",
+  "identifier": 0,
+  "morph": "",
+  "affix": "",
+  "stem": "",
+  "morphedStem": "",
+  "firstPage": {
+    "instruction": "",
+    "instructionAudio": "",
+    "instruction2": "",
+    "instruction2Audio": "",
+    "boxImage0": "",
+    "boxImage1": "",
+    "words": [
+      { "word": "", "correctBox": -1, "audio": "" },
+      { "word": "", "correctBox": -1, "audio": "" },
+      { "word": "", "correctBox": -1, "audio": "" },
+      { "word": "", "correctBox": -1, "audio": "" }
+    ]
+  }
+}

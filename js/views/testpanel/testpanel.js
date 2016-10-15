@@ -16,7 +16,7 @@ var MorfologiApp;
             TestPanelController.prototype.initialise = function () {
                 // this.language = this.dataService.getLanguage();
             };
-            TestPanelController.$inject = ['$http', '$location', '$scope'];
+            TestPanelController.$inject = ["$http", "$location", "$scope"];
             return TestPanelController;
         }());
         Controllers.TestPanelController = TestPanelController;
