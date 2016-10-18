@@ -1,0 +1,40 @@
+{
+  "kind": "TaskType4",
+  "identifier": 0,
+  "morph": "",
+  "affix": "",
+  "stem": "",
+  "morphedStem": "",
+  "firstPage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image": "",
+    "captionPre": "",
+    "captionPost": "",
+    "captionAudio": "",
+    "words": [
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" }
+    ],
+    "correct": 0
+  },
+  "secondPage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image": "",
+    "captionPre": "",
+    "captionPost": "",
+    "captionAudio": "",
+    "words": [
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" },
+      { "word": "", "correct": false, "audio": "" }
+    ],
+    "correct": 0
+  }
+}

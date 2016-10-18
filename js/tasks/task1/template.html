@@ -1,0 +1,20 @@
+<div ng-controller="Task1Controller as t1C" class="task1">
+
+        <div class="fadeInOut" ng-style="{'opacity' : t1C.opacity }">
+
+            <img class="centerInContainer" ng-src="{{t1C.itemA['file']}}" ng-click="t1C.clickItemA()"
+                 ng-class="{ 'borderGreen': t1C.itemA['border'] && t1C.itemA['correct'],
+                             'borderRed': t1C.itemA['border'] && !t1C.itemA['correct'],
+                             'highlightByScaling': t1C.itemA['highlight'] }">
+        </div>
+
+        <div class="fadeInOut" ng-style="{'opacity' : t1C.opacity }">
+
+            <img class="centerInContainer" ng-src="{{t1C.itemB['file']}}" ng-click="t1C.clickItemB()"
+                 ng-class="{ 'borderGreen': t1C.itemB['border'] && t1C.itemB['correct'],
+                             'borderRed': t1C.itemB['border'] && !t1C.itemB['correct'],
+                             'highlightByScaling': t1C.itemB['highlight'] }">
+        </div>
+
+
+</div>

@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "kind": "TaskType2",
+      "identifier": 10,
+      "morph": "u",
+      "affix": "prefix",
+      "stem": "orden",
+      "morphedStem": "uorden",
+      "firstPage": {
+        "instructionPre": "Trykk på bildet som viser ",
+        "instructionPost": ".",
+        "instructionAudio": "",
+        "image1": "aaaa.jpg",
+        "image2": "bbbb.jpg",
+        "image3": "cccc.jpg",
+        "image4": "dddd.jpg",
+        "correct": [1]
+      },
+      "secondPage": {
+        "instructionPre": "Trykk på bildene som viser ",
+        "instructionPost": ".",
+        "instructionAudio": "1111.mp3",
+        "image1": "1111.jpg",
+        "image2": "2222.jpg",
+        "image3": "3333.jpg",
+        "image4": "4444.jpg",
+        "correct": [1,3,4]
+      }
+    },
+    {
+      "kind": "TaskType6",
+      "identifier": 6,
+      "morph": "u",
+      "affix": "prefix",
+      "stem": "orden",
+      "morphedStem": "uorden",
+      "firstPage": {
+        "instruction": "First intro first intro first intro first intro first intro first intro first intro",
+        "instructionAudio": "instruction1.mp3",
+        "instruction2": "Trekk strek mellom ord og bilde",
+        "instruction2Audio": "instruction2.mp3",
+        "boxImage0": "ordered.jpg",
+        "boxImage1": "unordered.jpg",
+        "words": [
+          { "word": "ute", "correctBox": -1, "audio": "ute.mp3" },
+          { "word": "orden", "correctBox": 0, "audio": "orden.mp3" },
+          { "word": "orker", "correctBox": -1, "audio": "orker.mp3" },
+          { "word": "uorden", "correctBox": 1, "audio": "uorden.mp3" }
+        ]
+      }
+    },
+    {
+      "kind": "TaskType4",
+      "identifier": 3,
+      "morph": "mis",
+      "affix": "prefix",
+      "stem": "unner",
+      "morphedStem": "misunner",
+      "firstPage": {
+        "instructionPre": "",
+        "instructionPost": "",
+        "instructionAudio": "",
+        "image": "",
+        "captionPre": "",
+        "captionPost": "",
+        "captionAudio": "",
+        "words": [
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" }
+        ],
+        "correct": 0
+      },
+      "secondPage": {
+        "instructionPre": "",
+        "instructionPost": "",
+        "instructionAudio": "",
+        "image": "",
+        "captionPre": "",
+        "captionPost": "",
+        "captionAudio": "",
+        "words": [
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" },
+          { "word": "", "correct": false, "audio": "" }
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

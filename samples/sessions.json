@@ -1,0 +1,36 @@
+{
+  "sessionId1": {
+    "name": "pilot_group1",
+    "shuffle": true,
+    "unforgiving": false,
+    "tasks": [
+      {
+        "morf": "u",
+        "total": 4,
+        "selection": [],
+        "suportedTypes": [1,2,3,4,5,6]
+      },
+      {
+        "morf": "mis",
+        "total": 24,
+        "selection": [],
+        "suportedTypes": [2,3,4]
+      }
+    ]
+  },
+  "sessionId2": {
+    "name": "pilot_group2",
+    "shuffle": true,
+    "unforgiving": false,
+    "config": [
+      {
+        "key": "u",
+        "variation": 24
+      },
+      {
+        "key": "mis",
+        "variation": 4
+      }
+    ]
+  }
+}

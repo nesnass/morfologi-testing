@@ -1,0 +1,28 @@
+{
+  "kind": "TaskType2",
+  "identifier": 0,
+  "morph": "",
+  "affix": "",
+  "stem": "",
+  "morphedStem": "",
+  "firstPage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image1": "",
+    "image2": "",
+    "image3": "",
+    "image4": "",
+    "correct": []
+  },
+  "secondPage": {
+    "instructionPre": "",
+    "instructionPost": "",
+    "instructionAudio": "",
+    "image1": "",
+    "image2": "",
+    "image3": "",
+    "image4": "",
+    "correct": []
+  }
+}

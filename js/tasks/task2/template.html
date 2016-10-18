@@ -1,0 +1,14 @@
+<div ng-controller="Task3Controller as t3C">
+
+    <div style="margin-top: 10px;"></div>
+
+    <div class="row" ng-repeat="r in [0,3,6,9,12]">
+        <div class="col center" ng-repeat="i in [0,1,2]">
+            <img ng-src="{{t3C[t3C.stage][r+i]['image']}}" style="height: 120px;" ng-click="t3C.clickItem(t3C[t3C.stage][r+i])"
+                 ng-class="{'isp-border-green': t3C[t3C.stage][r+i]['highlighted'] && t3C[t3C.stage][r+i]['correct'],
+                            'isp-border-red': t3C[t3C.stage][r+i]['highlighted'] && !t3C[t3C.stage][r+i]['correct']}">
+        </div>
+    </div>
+
+
+</div>

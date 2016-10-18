@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "filesGlob": [
+    "./js/**/*.ts",
+    "!node_modules/**/*"
+  ],
+  "files": [
+    "node_modules/rx/ts/rx.lite.es6.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings/globals",
+    "typings/index.d.ts"
+  ],
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
