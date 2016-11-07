@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "kind": "TaskType2",
+      "taskType": 2,
       "identifier": 10,
       "morph": "u",
       "affix": "prefix",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "kind": "TaskType6",
+      "taskType": 6,
       "identifier": 6,
       "morph": "u",
       "affix": "prefix",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "kind": "TaskType4",
+      "taskType": 4,
       "identifier": 3,
       "morph": "mis",
       "affix": "prefix",

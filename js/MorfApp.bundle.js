@@ -682,115 +682,6 @@ var MorfologiApp;
     })(Directives = MorfologiApp.Directives || (MorfologiApp.Directives = {}));
 })(MorfologiApp || (MorfologiApp = {}));
 
-/// <reference path="../../_references"/>
-/// <reference path="../../models/models"/>
-var MorfologiApp;
-(function (MorfologiApp) {
-    var Controllers;
-    (function (Controllers) {
-        "use strict";
-        var MainPanelController = (function () {
-            function MainPanelController($http, $location, $scope) {
-                this.$http = $http;
-                this.$location = $location;
-                this.$scope = $scope;
-                this.language = "";
-                this.initialise();
-            }
-            MainPanelController.prototype.initialise = function () {
-                // this.language = this.dataService.getLanguage();
-            };
-            MainPanelController.prototype.selectTask = function (taskType) {
-                this.taskTemplateUrl = "js/tasks/task" + taskType + "/template.html";
-            };
-            MainPanelController.$inject = ["$http", "$location", "$scope"];
-            return MainPanelController;
-        }());
-        Controllers.MainPanelController = MainPanelController;
-    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
-})(MorfologiApp || (MorfologiApp = {}));
-
-/// <reference path="../../_references"/>
-/// <reference path="../../models/models"/>
-var MorfologiApp;
-(function (MorfologiApp) {
-    var Controllers;
-    (function (Controllers) {
-        "use strict";
-        var TestPanelController = (function () {
-            function TestPanelController($http, $location, $scope) {
-                this.$http = $http;
-                this.$location = $location;
-                this.$scope = $scope;
-                this.language = "";
-                this.initialise();
-            }
-            TestPanelController.prototype.initialise = function () {
-                // this.language = this.dataService.getLanguage();
-            };
-            TestPanelController.$inject = ["$http", "$location", "$scope"];
-            return TestPanelController;
-        }());
-        Controllers.TestPanelController = TestPanelController;
-    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
-})(MorfologiApp || (MorfologiApp = {}));
-
-/// <reference path="../../../js/_references"/>
-/// <reference path="../../models/models"/>
-/// <reference path="../../services/dataService"/>
-var MorfologiApp;
-(function (MorfologiApp) {
-    var Controllers;
-    (function (Controllers) {
-        "use strict";
-        var Task2Controller = (function () {
-            function Task2Controller($scope, $timeout, dataService) {
-                this.$scope = $scope;
-                this.$timeout = $timeout;
-                this.dataService = dataService;
-                this.stage = "stageOne";
-                this.correctCounter = 0;
-                var correctToShuffle = [];
-                var incorrectToShuffle = [];
-                for (var i = 1; i < 25; i++) {
-                    var item = {
-                        image: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".jpg",
-                        audio: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".mp3",
-                        correct: true,
-                        highlighted: false
-                    };
-                    correctToShuffle.push(item);
-                }
-                for (var i = 1; i < 7; i++) {
-                    var item = {
-                        image: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".jpg",
-                        audio: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".mp3",
-                        correct: false,
-                        highlighted: false
-                    };
-                    incorrectToShuffle.push(item);
-                }
-                var stageTwoCorrect = correctToShuffle.splice(12, 12);
-                var stageTwoIncorrect = incorrectToShuffle.splice(3, 3);
-                this.stageOne = dataService.shuffleArray(correctToShuffle.concat(incorrectToShuffle));
-                this.stageTwo = dataService.shuffleArray(stageTwoCorrect.concat(stageTwoIncorrect));
-                // This should be run at the end of the constructor
-                /*
-                let handle = this;
-                dataService.setInteractionEndActivateTaskCallback(() => {
-                    this.activateTask(handle);
-                });
-                */
-                dataService.setupAudioIntroduction("content/" + this.word + "/task1/instruction-" + this.dayWord + ".mp3");
-                dataService.playAudioIntroduction(3000);
-            }
-            Task2Controller.$inject = ["$scope", "$timeout", "DataService"];
-            return Task2Controller;
-        }());
-        Controllers.Task2Controller = Task2Controller;
-    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
-})(MorfologiApp || (MorfologiApp = {}));
-
 /// <reference path="../../../js/_references"/>
 /// <reference path="../../models/models"/>
 /// <reference path="../../services/dataService"/>
@@ -998,6 +889,62 @@ var MorfologiApp;
             return Task3Controller;
         }());
         Controllers.Task3Controller = Task3Controller;
+    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
+})(MorfologiApp || (MorfologiApp = {}));
+
+/// <reference path="../../../js/_references"/>
+/// <reference path="../../models/models"/>
+/// <reference path="../../services/dataService"/>
+var MorfologiApp;
+(function (MorfologiApp) {
+    var Controllers;
+    (function (Controllers) {
+        "use strict";
+        var Task2Controller = (function () {
+            function Task2Controller($scope, $timeout, dataService) {
+                this.$scope = $scope;
+                this.$timeout = $timeout;
+                this.dataService = dataService;
+                this.stage = "stageOne";
+                this.correctCounter = 0;
+                var correctToShuffle = [];
+                var incorrectToShuffle = [];
+                for (var i = 1; i < 25; i++) {
+                    var item = {
+                        image: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".jpg",
+                        audio: "content/" + this.word + "/" + this.dayWord + "/correct/" + i + ".mp3",
+                        correct: true,
+                        highlighted: false
+                    };
+                    correctToShuffle.push(item);
+                }
+                for (var i = 1; i < 7; i++) {
+                    var item = {
+                        image: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".jpg",
+                        audio: "content/" + this.word + "/" + this.dayWord + "/incorrect/" + i + ".mp3",
+                        correct: false,
+                        highlighted: false
+                    };
+                    incorrectToShuffle.push(item);
+                }
+                var stageTwoCorrect = correctToShuffle.splice(12, 12);
+                var stageTwoIncorrect = incorrectToShuffle.splice(3, 3);
+                this.stageOne = dataService.shuffleArray(correctToShuffle.concat(incorrectToShuffle));
+                this.stageTwo = dataService.shuffleArray(stageTwoCorrect.concat(stageTwoIncorrect));
+                // This should be run at the end of the constructor
+                /*
+                let handle = this;
+                dataService.setInteractionEndActivateTaskCallback(() => {
+                    this.activateTask(handle);
+                });
+                */
+                dataService.setupAudioIntroduction("content/" + this.word + "/task1/instruction-" + this.dayWord + ".mp3");
+                dataService.playAudioIntroduction(3000);
+            }
+            Task2Controller.$inject = ["$scope", "$timeout", "DataService"];
+            return Task2Controller;
+        }());
+        Controllers.Task2Controller = Task2Controller;
     })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
 })(MorfologiApp || (MorfologiApp = {}));
 
@@ -1264,6 +1211,59 @@ var MorfologiApp;
             return Task6Controller;
         }());
         Controllers.Task6Controller = Task6Controller;
+    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
+})(MorfologiApp || (MorfologiApp = {}));
+
+/// <reference path="../../_references"/>
+/// <reference path="../../models/models"/>
+var MorfologiApp;
+(function (MorfologiApp) {
+    var Controllers;
+    (function (Controllers) {
+        "use strict";
+        var MainPanelController = (function () {
+            function MainPanelController($http, $location, $scope) {
+                this.$http = $http;
+                this.$location = $location;
+                this.$scope = $scope;
+                this.language = "";
+                this.initialise();
+            }
+            MainPanelController.prototype.initialise = function () {
+                // this.language = this.dataService.getLanguage();
+            };
+            MainPanelController.prototype.selectTask = function (taskType) {
+                this.taskTemplateUrl = "js/tasks/task" + taskType + "/template.html";
+            };
+            MainPanelController.$inject = ["$http", "$location", "$scope"];
+            return MainPanelController;
+        }());
+        Controllers.MainPanelController = MainPanelController;
+    })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
+})(MorfologiApp || (MorfologiApp = {}));
+
+/// <reference path="../../_references"/>
+/// <reference path="../../models/models"/>
+var MorfologiApp;
+(function (MorfologiApp) {
+    var Controllers;
+    (function (Controllers) {
+        "use strict";
+        var TestPanelController = (function () {
+            function TestPanelController($http, $location, $scope) {
+                this.$http = $http;
+                this.$location = $location;
+                this.$scope = $scope;
+                this.language = "";
+                this.initialise();
+            }
+            TestPanelController.prototype.initialise = function () {
+                // this.language = this.dataService.getLanguage();
+            };
+            TestPanelController.$inject = ["$http", "$location", "$scope"];
+            return TestPanelController;
+        }());
+        Controllers.TestPanelController = TestPanelController;
     })(Controllers = MorfologiApp.Controllers || (MorfologiApp.Controllers = {}));
 })(MorfologiApp || (MorfologiApp = {}));
 
