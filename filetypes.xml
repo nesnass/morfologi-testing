@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="keystone_hacks" type="PLAIN_TEXT" />
       <mapping pattern="morfmodels" type="TypeScript" />
     </extensionMap>
   </component>
