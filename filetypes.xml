@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="plan-2016" type="PLAIN_TEXT" />
       <mapping pattern="keystone_hacks" type="PLAIN_TEXT" />
+      <mapping ext="old" type="PLAIN_TEXT" />
       <mapping pattern="morfmodels" type="TypeScript" />
     </extensionMap>
   </component>
