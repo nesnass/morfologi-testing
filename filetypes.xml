@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping ext="mp3" type="Native" />
       <mapping pattern="plan-2016" type="PLAIN_TEXT" />
       <mapping pattern="keystone_hacks" type="PLAIN_TEXT" />
       <mapping ext="backup" type="PLAIN_TEXT" />
