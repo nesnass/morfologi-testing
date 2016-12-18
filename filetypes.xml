@@ -5,6 +5,7 @@
       <mapping pattern="postallpasses_prod" type="PLAIN_TEXT" />
       <mapping pattern="postallpasses_dev" type="PLAIN_TEXT" />
       <mapping pattern=".env" type="PLAIN_TEXT" />
+      <mapping pattern="notes" type="PLAIN_TEXT" />
       <mapping pattern="plan-2016" type="PLAIN_TEXT" />
       <mapping pattern="keystone_hacks" type="PLAIN_TEXT" />
       <mapping ext="plist" type="PLAIN_TEXT" />
