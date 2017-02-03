@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="student" type="JavaScript" />
       <mapping ext="mp3" type="Native" />
       <mapping pattern="postallpasses_prod" type="PLAIN_TEXT" />
       <mapping pattern="postallpasses_dev" type="PLAIN_TEXT" />
