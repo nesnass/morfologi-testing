@@ -3,7 +3,7 @@
     <property name="created">2017-02-04T15:02:41</property>
     <property name="ide">WebStorm</property>
     <property name="ideVersion">2016.3.3.0.0</property>
-    <property name="modified">2017-02-04T15:23:29</property>
+    <property name="modified">2017-02-06T17:54:10</property>
     <property name="originalScheme">Darcula</property>
   </metaInfo>
   <font>
@@ -12,8 +12,17 @@
   </font>
   <font>
     <option name="EDITOR_FONT_NAME" value="Menlo" />
-    <option name="EDITOR_FONT_SIZE" value="16" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
   </font>
   <option name="CONSOLE_FONT_NAME" value="Menlo" />
   <option name="CONSOLE_FONT_SIZE" value="12" />
+  <attributes>
+    <option name="TEXT">
+      <value>
+        <option name="FOREGROUND" value="a9b7c6" />
+        <option name="BACKGROUND" value="111111" />
+        <option name="EFFECT_TYPE" value="5" />
+      </value>
+    </option>
+  </attributes>
 </scheme>
