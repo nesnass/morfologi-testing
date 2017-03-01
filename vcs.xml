@@ -22,8 +22,12 @@
           <option name="url" value="http://github.uio.no" />
           <option name="userName" value="richarne" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/visitracker/VisitrackerPortalNode" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/Documents/Development/WebStormWorkspace/" />
+    <option name="cloneParentDir" value="$USER_HOME$/Documents/Development/WebStormWorkspace/visitracker/" />
   </component>
 </application>
