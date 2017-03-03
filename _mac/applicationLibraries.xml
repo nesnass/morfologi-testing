@@ -35,6 +35,28 @@
       </CLASSES>
       <SOURCES />
     </library>
+    <library name="cordova-DefinitelyTyped" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_cordova_index.d.ts" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_cordova_index.d.ts" />
+      </CLASSES>
+      <SOURCES />
+    </library>
+    <library name="cordova-plugin-file-DefinitelyTyped" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_cordova-plugin-file_index.d.ts" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_cordova-plugin-file_index.d.ts" />
+      </CLASSES>
+      <SOURCES />
+    </library>
     <library name="ionic-DefinitelyTyped" type="javaScript">
       <properties>
         <sourceFilesUrls>
