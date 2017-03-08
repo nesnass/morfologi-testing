@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '.../www/js/modules/sessions/sessions.js - [morfologi]'" />
-    <option name="defaultScopeName" value="File '.../www/js/modules/sessions/sessions.js - [morfologi]'" />
-    <option name="SEARCH_SCOPE" value="File '.../www/js/modules/sessions/sessions.js - [morfologi]'" />
+    <option name="customScope" value="Project TS Files" />
+    <option name="defaultScopeName" value="Project TS Files" />
+    <option name="SEARCH_SCOPE" value="Project TS Files" />
   </component>
 </application>
