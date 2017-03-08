@@ -1,0 +1,9 @@
+<toolSet name="External Tools">
+  <tool name="rollup" showInMainMenu="true" showInEditor="false" showInProject="true" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="rollup" />
+      <option name="PARAMETERS" value="-c rollup.config.tablet.js" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>
