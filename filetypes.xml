@@ -13,6 +13,7 @@
       <mapping ext="php" type="PLAIN_TEXT" />
       <mapping ext="backup" type="PLAIN_TEXT" />
       <mapping ext="old" type="PLAIN_TEXT" />
+      <mapping ext="py" type="PLAIN_TEXT" />
       <mapping pattern="morfmodels" type="TypeScript" />
     </extensionMap>
   </component>
