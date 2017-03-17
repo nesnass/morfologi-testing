@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project TS Files" />
-    <option name="defaultScopeName" value="Project TS Files" />
-    <option name="SEARCH_SCOPE" value="Project TS Files" />
+    <option name="customScope" value="File '.../src/js/controllers/newFixture/newFixture.ts - [portal]'" />
+    <option name="defaultScopeName" value="File '.../src/js/controllers/newFixture/newFixture.ts - [portal]'" />
+    <option name="SEARCH_SCOPE" value="File '.../src/js/controllers/newFixture/newFixture.ts - [portal]'" />
   </component>
 </application>
